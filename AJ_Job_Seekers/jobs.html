@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jobs | AJ Job Seekers</title>
+  <meta name="description" content="Search the latest job opportunities in Ghana by job title, company, location and job type with AJ Job Seekers.">
+  <meta name="author" content="Jones Awuah">
+  <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/jobs.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand">
+        <svg class="logo-mark" viewBox="0 0 64 64" role="img" aria-label="AJ Job Seekers logo">
+          <path d="M6 22 A24 24 0 0 1 30 4" fill="none" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="42" y1="42" x2="58" y2="58" stroke="#0b2545" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="28" cy="28" r="20" fill="#ffffff" stroke="#1d4ed8" stroke-width="6"/>
+          <text x="28" y="35" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="18" font-weight="800" fill="#0b2545">AJ</text>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-top">JOB</span>
+          <span class="brand-bottom">SEEKERS</span>
+          <span class="brand-tag">YOUR CAREER PARTNER</span>
+        </span>
+      </a>
+
+      <button id="menuToggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <nav id="mainNav" class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="jobs.html" class="active">Jobs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-mobile-only"><a href="jobs.html#post-a-job">Post Job</a></li>
+          <li class="nav-mobile-only"><a href="join.html">Find Job</a></li>
+        </ul>
+      </nav>
+
+      <div class="top-actions">
+        <a href="jobs.html#post-a-job" class="btn small btn-post">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Post Job
+        </a>
+        <a href="join.html" class="btn small">Find Job</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO + SEARCH -->
+    <section class="hero jobs-hero">
+      <div class="container">
+        <span class="eyebrow">Jobs</span>
+        <h1>Find the job that fits you, in the place you want to work.</h1>
+        <p class="lead">
+          Search current job opportunities by job title, company or keyword, then narrow them down by location and job type.
+        </p>
+
+        <form class="search-box" id="jobSearchForm" role="search" autocomplete="off">
+          <div class="search-field">
+            <label for="jobQuery">What job are you looking for?</label>
+            <input type="search" id="jobQuery" placeholder="Job title, company or keyword">
+          </div>
+          <div class="search-field">
+            <label for="jobLocation">Where?</label>
+            <input type="search" id="jobLocation" placeholder="City or region, e.g. Accra">
+          </div>
+          <div class="search-field">
+            <label for="jobType">Job type</label>
+            <select id="jobType">
+              <option value="">All job types</option>
+            </select>
+          </div>
+          <button type="submit" class="btn primary search-btn">Search Jobs</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- RESULTS + EMPLOYER CARD -->
+    <section class="section">
+      <div class="container split">
+        <div class="split-main">
+          <div class="results-head">
+            <div>
+              <span class="eyebrow">Job Opportunities</span>
+              <h2>Latest vacancies</h2>
+            </div>
+            <div class="results-meta">
+              <p id="jobsCount" aria-live="polite"></p>
+              <button type="button" class="learn-more" id="jobClear" hidden>Clear search</button>
+            </div>
+          </div>
+
+          <div id="jobsList" class="jobs-grid"></div>
+        </div>
+
+        <div class="split-side" id="post-a-job">
+          <aside class="side-card">
+            <h3>Want to post a job?</h3>
+            <p>
+              Employers who want to advertise a vacancy on AJ Job Seekers should contact us.
+              Tell us about the role and we will review the details and publish it for you.
+            </p>
+            <a class="btn light" href="contact.html">Contact Us</a>
+          </aside>
+          <div class="tip-card">
+            <h4>Tips for applying</h4>
+            <ul class="check-list">
+              <li>Read the qualifications carefully before you apply.</li>
+              <li>Tailor your resume and cover letter to the role.</li>
+              <li>Apply before the due date shown on the job.</li>
+            </ul>
+            <a class="learn-more" href="resources.html">Get Resources <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT CTA -->
+    <section class="contact-cta">
+      <div class="container">
+        <span class="eyebrow light">Contact</span>
+        <h2>Can’t find what you are looking for?</h2>
+        <p>
+          New jobs are added regularly. Check back soon, or get in touch and we will help you with your job search.
+        </p>
+        <a href="contact.html" class="btn light">Get In Touch</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <div class="footer-col footer-about">
+        <h4>AJ JOB SEEKERS</h4>
+        <p>
+          AJ Job Seekers provides resources, guidance, and real opportunities to help
+          individuals find meaningful employment. We connect motivated applicants with
+          trusted employers.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="join.html">Find Job</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="resume.html">Resume Writing</a></li>
+          <li><a href="application-tips.html">Cover Letter Tips</a></li>
+          <li><a href="interview-coaching.html">Interview Preparation</a></li>
+          <li><a href="jobs.html">Job Search Strategies</a></li>
+          <li><a href="career-guides.html">Career Development</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul class="contact-list">
+          <li>
+            <a href="https://jonesawuah.github.io/wdd231/finalproject/index.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Website
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Telephone
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="year"></span> AJ Job Seekers. All rights reserved.</p>
+        <p>
+          <a href="#">Privacy Policy</a> ·
+          <a href="#">Cookies Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/jobs.js"></script>
+  <script src="scripts/nav.js" defer></script>
+</body>
+</html>

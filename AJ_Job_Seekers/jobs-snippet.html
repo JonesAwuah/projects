@@ -1,0 +1,20 @@
+<!-- ============================================================
+  Paste these 3 pieces into your existing jobs.html
+  ============================================================ -->
+
+<!-- 1) In <head>, after your other stylesheets -->
+<link rel="stylesheet" href="styles/jobs-feed.css">
+
+<!-- 2) In <main>, where the job listings should appear
+        (replace your old hard-coded job cards with this) -->
+<div class="jobs-tools">
+  <input type="search" id="jobSearch" placeholder="Search by title, company or location" aria-label="Search jobs">
+  <select id="jobType" aria-label="Filter by job type">
+    <option value="">All job types</option>
+  </select>
+</div>
+<p id="jobsCount" aria-live="polite"></p>
+<div id="jobsList" class="jobs-grid"></div>
+
+<!-- 3) Just before </body> -->
+<script src="scripts/jobs-feed.js"></script>

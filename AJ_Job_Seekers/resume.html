@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Resume Tools | AJ Job Seekers</title>
+  <meta name="description" content="Learn how to write a resume that gets noticed, then build and print your own with the free AJ Job Seekers resume builder.">
+  <meta name="author" content="Jones Awuah">
+  <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/resume.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar no-print">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand">
+        <svg class="logo-mark" viewBox="0 0 64 64" role="img" aria-label="AJ Job Seekers logo">
+          <path d="M6 22 A24 24 0 0 1 30 4" fill="none" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="42" y1="42" x2="58" y2="58" stroke="#0b2545" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="28" cy="28" r="20" fill="#ffffff" stroke="#1d4ed8" stroke-width="6"/>
+          <text x="28" y="35" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="18" font-weight="800" fill="#0b2545">AJ</text>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-top">JOB</span>
+          <span class="brand-bottom">SEEKERS</span>
+          <span class="brand-tag">YOUR CAREER PARTNER</span>
+        </span>
+      </a>
+
+      <button id="menuToggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <nav id="mainNav" class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="resources.html" class="active">Resources</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li class="nav-mobile-only"><a href="jobs.html#post-a-job">Post Job</a></li>
+          <li class="nav-mobile-only"><a href="join.html">Find Job</a></li>
+        </ul>
+      </nav>
+
+      <div class="top-actions">
+        <a href="jobs.html#post-a-job" class="btn small btn-post">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Post Job
+        </a>
+        <a href="join.html" class="btn small">Find Job</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero no-print">
+      <div class="container hero-inner">
+        <div class="hero-left">
+          <span class="eyebrow">Resume Tools</span>
+          <h1>Create a standout resume that gets you noticed.</h1>
+          <p class="lead">
+            Learn what to include, how to lay it out and which mistakes to avoid. Then build your own
+            resume in minutes and print it or save it as a PDF, free.
+          </p>
+          <div class="hero-ctas">
+            <a class="btn primary" href="#builder">Build My Resume</a>
+            <a class="btn outline" href="#guide">Read the Guide</a>
+          </div>
+        </div>
+
+        <div class="hero-right" aria-hidden="true">
+          <div class="portrait-pill">
+            <img src="images/resume-tools.webp" alt="Resume building tools">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT HIRING MANAGERS LOOK FOR -->
+    <section class="section no-print" id="guide">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">The Basics</span>
+          <h2>A resume has one job: to earn you an interview.</h2>
+          <p>
+            Hiring managers often review many applications for a single role and may spend only seconds on each
+            one. Make yours easy to scan, easy to trust and clearly relevant.
+          </p>
+        </div>
+
+        <div class="cards-grid">
+          <article class="card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+            </div>
+            <h3>Clear</h3>
+            <p>One to two pages, a clean layout, consistent fonts and clear headings so the key points are seen first.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+            </div>
+            <h3>Relevant</h3>
+            <p>Tailored to each job. Use the same keywords as the advert and lead with the experience that matches it.</p>
+          </article>
+          <article class="card">
+            <div class="icon-box">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><polyline points="9 12 11 14 15 10"/></svg>
+            </div>
+            <h3>Honest and proven</h3>
+            <p>Show results, with numbers where you can, and never include anything you cannot back up in an interview.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT TO INCLUDE -->
+    <section class="section alt no-print">
+      <div class="container split">
+        <div class="split-main">
+          <span class="eyebrow">What to Include</span>
+          <h2>The sections every resume needs.</h2>
+          <ol class="step-list">
+            <li><strong>Contact details:</strong> your name, phone number, professional email address and city.</li>
+            <li><strong>Professional summary:</strong> two or three lines on who you are, what you do well and the role you want.</li>
+            <li><strong>Work experience:</strong> most recent first. Describe what you achieved, not only what you were responsible for.</li>
+            <li><strong>Education and training:</strong> qualifications, certificates and relevant courses.</li>
+            <li><strong>Skills:</strong> the skills the advert asks for that you genuinely have.</li>
+            <li><strong>Referees:</strong> two people who know your work, or “available on request”.</li>
+          </ol>
+          <p class="note">
+            <strong>No work experience yet?</strong> Lead with your education, projects, volunteering, internships and
+            leadership roles. Show what you can do and how quickly you learn.
+          </p>
+        </div>
+
+        <div class="split-side">
+          <aside class="side-card">
+            <h3>Ready to build yours?</h3>
+            <p>Fill in the form below and watch your resume take shape. When you are happy with it, print it or save it as a PDF.</p>
+            <a class="btn light" href="#builder">Start Building</a>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- BUILDER -->
+    <section class="section builder-section" id="builder">
+      <div class="container">
+        <div class="section-head no-print">
+          <span class="eyebrow">Resume Builder</span>
+          <h2>Build your resume and see it update as you type.</h2>
+          <p>
+            The example below is made-up sample content. Replace it with your own details, or use
+            <strong>Clear all</strong> to start from a blank form. Your details stay in your browser and are never uploaded.
+          </p>
+        </div>
+
+        <div class="builder">
+
+          <!-- FORM -->
+          <form class="builder-form no-print" id="resumeForm" autocomplete="off" novalidate>
+
+            <fieldset>
+              <legend>Style</legend>
+              <div class="style-pick">
+                <label><input type="radio" name="style" value="classic" checked> Classic</label>
+                <label><input type="radio" name="style" value="modern"> Modern</label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Personal details</legend>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="f-name">Full name</label>
+                  <input type="text" id="f-name">
+                </div>
+                <div class="field">
+                  <label for="f-title">Job title you want</label>
+                  <input type="text" id="f-title" placeholder="e.g. Accounts Assistant">
+                </div>
+                <div class="field">
+                  <label for="f-phone">Phone</label>
+                  <input type="text" id="f-phone">
+                </div>
+                <div class="field">
+                  <label for="f-email">Email</label>
+                  <input type="text" id="f-email">
+                </div>
+                <div class="field full">
+                  <label for="f-location">Location</label>
+                  <input type="text" id="f-location" placeholder="e.g. Accra, Ghana">
+                </div>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Professional summary</legend>
+              <div class="field">
+                <label for="f-summary" class="sr-only">Professional summary</label>
+                <textarea id="f-summary" rows="4" placeholder="Two or three lines about who you are, what you do well and the role you want."></textarea>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend>Work experience</legend>
+              <div id="expList" class="entry-list"></div>
+              <button type="button" class="learn-more" id="addExp">+ Add experience</button>
+            </fieldset>
+
+            <fieldset>
+              <legend>Education and training</legend>
+              <div id="eduList" class="entry-list"></div>
+              <button type="button" class="learn-more" id="addEdu">+ Add education</button>
+            </fieldset>
+
+            <fieldset>
+              <legend>Skills and referees</legend>
+              <div class="field">
+                <label for="f-skills">Skills</label>
+                <textarea id="f-skills" rows="3" placeholder="Separate skills with commas"></textarea>
+              </div>
+              <div class="field">
+                <label for="f-referees">Referees</label>
+                <textarea id="f-referees" rows="2" placeholder="e.g. Available on request"></textarea>
+              </div>
+            </fieldset>
+
+            <div class="form-actions">
+              <button type="button" class="btn primary" id="printBtn">Print / Save as PDF</button>
+              <button type="button" class="btn outline" id="clearBtn">Clear all</button>
+            </div>
+            <p class="hint">
+              To save a PDF, click <strong>Print / Save as PDF</strong> and choose “Save as PDF” as the printer.
+              Your resume prints on its own, without the website around it.
+            </p>
+          </form>
+
+          <!-- PREVIEW -->
+          <div class="preview-wrap">
+            <p class="preview-label no-print">Live preview</p>
+            <article class="sheet classic" id="resumePreview" aria-label="Resume preview"></article>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- DO / DON'T -->
+    <section class="section alt no-print">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Do &amp; Don’t</span>
+          <h2>Small choices that make a big difference.</h2>
+        </div>
+
+        <div class="two-col">
+          <div class="panel-card good">
+            <h3>Do</h3>
+            <ul class="check-list">
+              <li>Tailor your resume to every job you apply for.</li>
+              <li>Start each bullet with a strong action verb.</li>
+              <li>Use numbers: people served, time saved, targets met.</li>
+              <li>Use a professional email address, such as your name.</li>
+              <li>Save and send it as a PDF with a clear file name, like <em>Ama-Mensah-Resume.pdf</em>.</li>
+              <li>Ask someone else to proofread it.</li>
+            </ul>
+          </div>
+          <div class="panel-card bad">
+            <h3>Don’t</h3>
+            <ul class="cross-list">
+              <li>Use one generic resume for every application.</li>
+              <li>Write long paragraphs or crowd the page with tiny text.</li>
+              <li>Include a photo, age, marital status or ID number unless the job asks for it.</li>
+              <li>Leave unexplained gaps or exaggerate your experience.</li>
+              <li>Make spelling or grammar mistakes.</li>
+              <li>Use fancy fonts, bright colours or heavy graphics.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ACTION VERBS -->
+    <section class="section no-print">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Action Verbs</span>
+          <h2>Start your bullet points with strong verbs.</h2>
+          <p>Instead of “responsible for…”, show what you actually did. Here are some to get you started.</p>
+        </div>
+
+        <div class="verbs">
+          <div class="verb-group">
+            <h3>Leadership</h3>
+            <p><span>Led</span><span>Managed</span><span>Coordinated</span><span>Supervised</span><span>Organised</span><span>Guided</span></p>
+          </div>
+          <div class="verb-group">
+            <h3>Achievement</h3>
+            <p><span>Achieved</span><span>Delivered</span><span>Increased</span><span>Reduced</span><span>Improved</span><span>Exceeded</span></p>
+          </div>
+          <div class="verb-group">
+            <h3>Communication</h3>
+            <p><span>Presented</span><span>Negotiated</span><span>Trained</span><span>Advised</span><span>Wrote</span><span>Explained</span></p>
+          </div>
+          <div class="verb-group">
+            <h3>Problem solving</h3>
+            <p><span>Analysed</span><span>Resolved</span><span>Designed</span><span>Developed</span><span>Streamlined</span><span>Introduced</span></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKLIST -->
+    <section class="section alt no-print">
+      <div class="container narrow-wrap">
+        <div class="section-head">
+          <span class="eyebrow">Final Check</span>
+          <h2>Check your resume before you send it.</h2>
+          <p class="progress" id="checkProgress" aria-live="polite">0 of 8 done</p>
+        </div>
+
+        <ul class="checklist" id="checklist">
+          <li><label><input type="checkbox"> It is one or two pages long.</label></li>
+          <li><label><input type="checkbox"> It is tailored to this job and uses keywords from the advert.</label></li>
+          <li><label><input type="checkbox"> My contact details are correct and my email is professional.</label></li>
+          <li><label><input type="checkbox"> Each bullet starts with an action verb and shows a result.</label></li>
+          <li><label><input type="checkbox"> Dates and job titles are accurate and in order, most recent first.</label></li>
+          <li><label><input type="checkbox"> There are no spelling or grammar mistakes.</label></li>
+          <li><label><input type="checkbox"> The layout and fonts are clean and consistent.</label></li>
+          <li><label><input type="checkbox"> I saved it as a PDF with a clear file name.</label></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="contact-cta no-print">
+      <div class="container">
+        <span class="eyebrow light">Next Step</span>
+        <h2>Your resume is ready. Now find the job.</h2>
+        <p>Browse the latest vacancies, then read our application tips to make sure your application is as strong as your resume.</p>
+        <div class="cta-buttons">
+          <a href="jobs.html" class="btn light">Browse Jobs</a>
+          <a href="application-tips.html" class="btn ghost-light">Application Tips</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer no-print">
+    <div class="container footer-container">
+      <div class="footer-col footer-about">
+        <h4>AJ JOB SEEKERS</h4>
+        <p>
+          AJ Job Seekers provides resources, guidance, and real opportunities to help
+          individuals find meaningful employment. We connect motivated applicants with
+          trusted employers.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="join.html">Find Job</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="resume.html">Resume Writing</a></li>
+          <li><a href="application-tips.html">Cover Letter Tips</a></li>
+          <li><a href="interview-coaching.html">Interview Preparation</a></li>
+          <li><a href="jobs.html">Job Search Strategies</a></li>
+          <li><a href="career-guides.html">Career Development</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul class="contact-list">
+          <li>
+            <a href="https://jonesawuah.github.io/wdd231/finalproject/index.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Website
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Telephone
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="year"></span> AJ Job Seekers. All rights reserved.</p>
+        <p>
+          <a href="#">Privacy Policy</a> ·
+          <a href="#">Cookies Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/resume.js"></script>
+  <script src="scripts/nav.js" defer></script>
+</body>
+</html>

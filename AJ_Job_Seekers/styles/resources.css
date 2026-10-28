@@ -1,0 +1,43 @@
+/* ===== Resources page (extends home.css) ===== */
+
+.section[id] { scroll-margin-top: 80px; }
+
+/* ----- Alternating image + text rows ----- */
+.feature {
+  display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 3.5rem; align-items: center;
+}
+.feature.reverse { grid-template-columns: 0.9fr 1.1fr; }
+.feature.reverse .feature-text { order: 2; }
+.feature.reverse .feature-img { order: 1; }
+
+.feature-text h2 { margin-bottom: 0.9rem; }
+.feature-text p { color: var(--muted); }
+.feature-text .learn-more { margin-top: 1.4rem; }
+
+.feature-img {
+  border-radius: var(--radius); overflow: hidden;
+  background: linear-gradient(135deg, var(--sky), #d7e4ff);
+  box-shadow: var(--shadow);
+  aspect-ratio: 4 / 3;
+}
+.feature-img img { width: 100%; height: 100%; object-fit: cover; }
+
+/* ----- Latest jobs mini list ----- */
+.job-mini { list-style: none; display: grid; gap: 0.7rem; margin-top: 1.2rem; }
+.job-mini li {
+  background: #fff; border: 1px solid var(--border); border-left: 4px solid var(--blue);
+  border-radius: 10px; padding: 0.75rem 1rem;
+}
+.job-mini a { display: block; color: inherit; }
+.job-mini a:hover strong { color: var(--blue); }
+.job-mini strong { display: block; color: var(--navy); font-size: 1rem; }
+.job-mini span { color: var(--muted); font-size: 0.88rem; }
+.job-mini .job-mini-empty {
+  border-left-color: var(--border); color: var(--muted); font-size: 0.95rem;
+}
+
+@media (max-width: 960px) {
+  .feature, .feature.reverse { grid-template-columns: 1fr; gap: 2rem; }
+  .feature.reverse .feature-text, .feature.reverse .feature-img { order: initial; }
+  .feature-img { max-height: 320px; aspect-ratio: 16 / 9; }
+}

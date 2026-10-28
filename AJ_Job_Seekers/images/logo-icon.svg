@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="AJ Job Seekers icon">
+  <rect width="64" height="64" rx="14" fill="#ffffff"/>
+  <line x1="40" y1="40" x2="56" y2="56" stroke="#0b2545" stroke-width="8" stroke-linecap="round"/>
+  <circle cx="27" cy="27" r="20" fill="#ffffff" stroke="#1d4ed8" stroke-width="6"/>
+  <text x="27" y="34" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="18" font-weight="800" fill="#0b2545">AJ</text>
+</svg>

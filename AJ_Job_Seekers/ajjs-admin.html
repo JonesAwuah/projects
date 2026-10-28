@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <title>Admin | AJ Job Seekers</title>
+  <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/admin.css">
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <span class="brand">
+        <svg class="logo-mark" viewBox="0 0 64 64" role="img" aria-label="AJ Job Seekers logo">
+          <path d="M6 22 A24 24 0 0 1 30 4" fill="none" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="42" y1="42" x2="58" y2="58" stroke="#0b2545" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="28" cy="28" r="20" fill="#ffffff" stroke="#1d4ed8" stroke-width="6"/>
+          <text x="28" y="35" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="18" font-weight="800" fill="#0b2545">AJ</text>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-top">JOB</span>
+          <span class="brand-bottom">SEEKERS</span>
+          <span class="brand-tag">ADMIN AREA</span>
+        </span>
+      </span>
+      <div class="top-actions" id="topActions" hidden>
+        <span class="pub-state off" id="pubState">Auto-publish: OFF</span>
+        <button type="button" class="btn small outline" id="lockBtn">Lock</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- PASSWORD GATE: nothing else is usable until this is passed -->
+    <section class="section alt" id="gate">
+      <div class="container gate-wrap">
+        <div class="panel gate">
+          <h1>Admin Access</h1>
+          <p>Enter the admin password to continue.</p>
+          <form id="gateForm" autocomplete="off">
+            <div class="field">
+              <label for="gatePass">Password</label>
+              <input type="password" id="gatePass" autocomplete="current-password" required autofocus>
+            </div>
+            <p class="form-msg" id="gateMsg" role="alert"></p>
+            <button type="submit" class="btn primary">Unlock</button>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- ADMIN APP -->
+    <div id="app" hidden>
+      <section class="section alt">
+        <div class="container narrow-wide">
+          <div class="app-head">
+            <h1>Admin Dashboard</h1>
+            <p>Post jobs to the Jobs page and articles to the Blog. You can edit or delete anything you have posted.</p>
+          </div>
+
+          <div class="tabs" role="tablist" aria-label="Admin sections">
+            <button type="button" role="tab" class="tab active" data-tab="jobs" aria-selected="true">Jobs</button>
+            <button type="button" role="tab" class="tab" data-tab="articles" aria-selected="false">Blog Articles</button>
+            <button type="button" role="tab" class="tab" data-tab="settings" aria-selected="false">Settings</button>
+          </div>
+
+          <div id="tab-jobs" class="tab-panel"></div>
+          <div id="tab-articles" class="tab-panel" hidden></div>
+
+          <div id="tab-settings" class="tab-panel" hidden>
+
+            <div class="panel">
+              <h2>Auto-Publish Connection</h2>
+              <p class="panel-note">
+                Connect this page to your website’s GitHub repository once. After that, clicking
+                <strong>Post</strong>, <strong>Save</strong> or <strong>Delete</strong> publishes straight to your website
+                (it shows up in about a minute) with no downloading or uploading.
+              </p>
+
+              <details class="steps">
+                <summary>How to get your access token (one time, about 2 minutes)</summary>
+                <ol>
+                  <li>Sign in to GitHub, then open <strong>Settings → Developer settings → Personal access tokens → Fine-grained tokens → Generate new token</strong>.</li>
+                  <li>Give it a name (for example “AJ Job Seekers admin”) and choose an expiry date.</li>
+                  <li>Under <strong>Repository access</strong>, choose <strong>Only select repositories</strong> and pick the repository that hosts your website.</li>
+                  <li>Under <strong>Permissions → Repository permissions</strong>, set <strong>Contents</strong> to <strong>Read and write</strong>.</li>
+                  <li>Click <strong>Generate token</strong>, copy it, and paste it below.</li>
+                </ol>
+                <p>The token is stored only in this browser. Never share it, and never put it in a website file.</p>
+              </details>
+
+              <form id="ghForm" autocomplete="off">
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="ghOwner">GitHub Username</label>
+                    <input type="text" id="ghOwner" required>
+                  </div>
+                  <div class="field">
+                    <label for="ghRepo">Repository Name</label>
+                    <input type="text" id="ghRepo" required>
+                  </div>
+                  <div class="field">
+                    <label for="ghBranch">Branch</label>
+                    <input type="text" id="ghBranch" required>
+                  </div>
+                  <div class="field">
+                    <label for="ghFolder">Data Folder in Repository</label>
+                    <input type="text" id="ghFolder" placeholder="e.g. finalproject/data/">
+                    <small>The folder that holds <code>jobs.json</code> and <code>articles.json</code>.</small>
+                  </div>
+                  <div class="field full">
+                    <label for="ghToken">Access Token</label>
+                    <input type="password" id="ghToken" autocomplete="new-password">
+                  </div>
+                </div>
+                <p class="form-msg" id="ghMsg" role="alert"></p>
+                <div class="form-actions">
+                  <button type="submit" class="btn primary">Save &amp; Connect</button>
+                  <button type="button" class="btn outline" id="ghTestBtn">Test Connection</button>
+                  <button type="button" class="btn outline danger-btn" id="ghDisconnectBtn">Disconnect</button>
+                </div>
+              </form>
+            </div>
+
+            <div class="panel">
+              <h2>Change Admin Password</h2>
+              <p class="panel-note">
+                The new password works in this browser straight away. To use it on every device,
+                copy the line shown after saving into <code>scripts/admin.js</code>, replacing the existing
+                <code>PASS_HASH</code> line, and upload that file.
+              </p>
+              <form id="passForm" autocomplete="off">
+                <div class="form-grid">
+                  <div class="field">
+                    <label for="newPass">New Password</label>
+                    <input type="password" id="newPass" minlength="10" required autocomplete="new-password">
+                    <small>At least 10 characters.</small>
+                  </div>
+                  <div class="field">
+                    <label for="newPass2">Confirm New Password</label>
+                    <input type="password" id="newPass2" minlength="10" required autocomplete="new-password">
+                  </div>
+                </div>
+                <p class="form-msg" id="passMsg" role="alert"></p>
+                <button type="submit" class="btn primary">Save Password</button>
+              </form>
+              <pre id="hashOut" class="hash-out" hidden></pre>
+            </div>
+
+            <div class="panel">
+              <h2>Clear Drafts</h2>
+              <p class="panel-note">Only used when auto-publish is off. Removes unpublished drafts stored in this browser and reloads the published lists.</p>
+              <button type="button" class="btn outline" id="clearDraftsBtn">Clear All Drafts</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+  </main>
+
+  <script src="scripts/admin.js"></script>
+</body>
+</html>

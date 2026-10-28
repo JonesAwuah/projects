@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | AJ Job Seekers</title>
+  <meta name="description" content="Contact AJ Job Seekers. Ask a question, get job search support, or tell us about a vacancy you want to advertise.">
+  <meta name="author" content="Jones Awuah">
+  <link rel="icon" type="image/svg+xml" href="images/logo-icon.svg">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/home.css">
+  <link rel="stylesheet" href="styles/contact.css">
+</head>
+<body>
+
+  <!-- TOP BAR -->
+  <header class="topbar no-print">
+    <div class="topbar-inner">
+      <a href="index.html" class="brand">
+        <svg class="logo-mark" viewBox="0 0 64 64" role="img" aria-label="AJ Job Seekers logo">
+          <path d="M6 22 A24 24 0 0 1 30 4" fill="none" stroke="#60a5fa" stroke-width="3.5" stroke-linecap="round"/>
+          <line x1="42" y1="42" x2="58" y2="58" stroke="#0b2545" stroke-width="8" stroke-linecap="round"/>
+          <circle cx="28" cy="28" r="20" fill="#ffffff" stroke="#1d4ed8" stroke-width="6"/>
+          <text x="28" y="35" text-anchor="middle" font-family="Manrope, Arial, sans-serif" font-size="18" font-weight="800" fill="#0b2545">AJ</text>
+        </svg>
+        <span class="brand-text">
+          <span class="brand-top">JOB</span>
+          <span class="brand-bottom">SEEKERS</span>
+          <span class="brand-tag">YOUR CAREER PARTNER</span>
+        </span>
+      </a>
+
+      <button id="menuToggle" class="hamburger" aria-label="Toggle navigation" aria-expanded="false">☰</button>
+
+      <nav id="mainNav" class="nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+          <li class="nav-mobile-only"><a href="jobs.html#post-a-job">Post Job</a></li>
+          <li class="nav-mobile-only"><a href="join.html">Find Job</a></li>
+        </ul>
+      </nav>
+
+      <div class="top-actions">
+        <a href="jobs.html#post-a-job" class="btn small btn-post">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+          Post Job
+        </a>
+        <a href="join.html" class="btn small">Find Job</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="container">
+        <span class="eyebrow">Contact</span>
+        <h1>We would love to hear from you.</h1>
+        <p class="lead">
+          Ask a question, get help with your job search, or tell us about a vacancy you want
+          to advertise. We read every message and reply as soon as we can.
+        </p>
+      </div>
+    </section>
+
+    <!-- FORM + DETAILS -->
+    <section class="section">
+      <div class="container contact-grid">
+
+        <div class="form-card">
+          <div id="formBox">
+            <span class="eyebrow">Send a message</span>
+            <h2>How can we help?</h2>
+            <p class="muted">Fields marked with * are required. Employers: choose “Employer: post a job” to tell us about your vacancy.</p>
+
+            <form id="contactForm" novalidate>
+              <div class="form-grid">
+                <div class="field">
+                  <label for="name">Your name *</label>
+                  <input id="name" name="name" type="text" autocomplete="name" required>
+                  <span class="err" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="email">Email address *</label>
+                  <input id="email" name="email" type="email" autocomplete="email" inputmode="email" required>
+                  <span class="err" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="phone">Phone or WhatsApp <span class="opt">(optional)</span></label>
+                  <input id="phone" name="phone" type="tel" autocomplete="tel" inputmode="tel" placeholder="+233 24 000 0000">
+                  <span class="err" role="alert"></span>
+                </div>
+                <div class="field">
+                  <label for="topic">What is this about? *</label>
+                  <select id="topic" name="topic">
+                    <option value="general">General enquiry</option>
+                    <option value="seeker">Job seeker support</option>
+                    <option value="employer">Employer: post a job</option>
+                    <option value="partner">Partnership or media</option>
+                    <option value="feedback">Feedback or report a problem</option>
+                  </select>
+                  <span class="err" role="alert"></span>
+                </div>
+
+                <div id="employerExtra" class="employer-extra" hidden>
+                  <h3>Vacancy details</h3>
+                  <p>We use these to prepare your job listing.</p>
+                  <div class="field">
+                    <label for="company">Company name *</label>
+                    <input id="company" name="company" type="text" autocomplete="organization" disabled>
+                    <span class="err" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="jobTitle">Job title *</label>
+                    <input id="jobTitle" name="jobTitle" type="text" disabled>
+                    <span class="err" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="jobLocation">Job location <span class="opt">(optional)</span></label>
+                    <input id="jobLocation" name="jobLocation" type="text" placeholder="e.g. Accra" disabled>
+                    <span class="err" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="positions">Number of people needed <span class="opt">(optional)</span></label>
+                    <input id="positions" name="positions" type="number" min="1" inputmode="numeric" disabled>
+                    <span class="err" role="alert"></span>
+                  </div>
+                  <div class="field">
+                    <label for="dueDate">Application due date <span class="opt">(optional)</span></label>
+                    <input id="dueDate" name="dueDate" type="date" disabled>
+                    <span class="err" role="alert"></span>
+                  </div>
+                </div>
+
+                <div class="field full">
+                  <label for="message" id="msgLabel">Your message</label>
+                  <textarea id="message" name="message" maxlength="2000" placeholder="How can we help you?"></textarea>
+                  <span class="counter" id="msgCount" aria-hidden="true">0 / 2000</span>
+                  <span class="err" role="alert"></span>
+                </div>
+
+                <!-- spam trap: real people never see or fill this field -->
+                <div class="hp" aria-hidden="true"><label for="website">Leave this field empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
+
+                <p id="formStatus" class="form-status" role="status" aria-live="polite" hidden></p>
+                <p class="privacy">We use your details only to reply to your message. Please do not send ID numbers, passwords or bank details through this form.</p>
+              </div>
+              <div class="actions">
+                <button type="submit" id="sendBtn" class="btn primary">Send message</button>
+              </div>
+            </form>
+          </div>
+
+          <div id="formDone" class="form-done" aria-live="polite" hidden></div>
+        </div>
+
+        <div class="side-stack">
+          <aside class="info-card">
+            <h3>Contact details</h3>
+            <ul class="contact-methods">
+              <li><span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></span><div><strong>Email</strong><a href="mailto:info@example.com" data-contact="email" data-show>info@example.com</a><small>Best for detailed questions</small></div></li>
+              <li><span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg></span><div><strong>WhatsApp</strong><a href="https://wa.me/233240000000" data-contact="whatsapp">Chat with us</a><small>Quick questions and support</small></div></li>
+              <li><span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span><div><strong>Telephone</strong><a href="tel:+233240000000" data-contact="phone" data-show>+233 24 000 0000</a><small>During working hours</small></div></li>
+              <li><span class="ci"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><div><strong>Location</strong><span>Ghana</span><small>We support job seekers and employers nationwide</small></div></li>
+            </ul>
+          </aside>
+
+          <aside class="info-card">
+            <h3>Working hours</h3>
+            <ul class="hours">
+              <li><span>Monday to Friday</span><span>8:00 am – 5:00 pm</span></li>
+              <li><span>Saturday</span><span>9:00 am – 1:00 pm</span></li>
+              <li><span>Sunday and holidays</span><span>Closed</span></li>
+            </ul>
+          </aside>
+
+          <aside class="promise">
+            <h3>Our promise</h3>
+            <p>We never charge job seekers. If anyone asks you to pay for a job, it is not from us. Tell us and we will help.</p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- TOPICS -->
+    <section class="section alt">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">Quick help</span>
+          <h2>Looking for something specific?</h2>
+        </div>
+        <div class="topic-cards">
+          <article class="topic-card">
+            <h3>Post a vacancy</h3>
+            <p>Employers can send us the role details and we will publish the vacancy.</p>
+            <a class="learn-more" href="contact.html?topic=employer#contactForm">Post a job <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="topic-card">
+            <h3>Find a job</h3>
+            <p>Search current vacancies by title, company, location and job type.</p>
+            <a class="learn-more" href="jobs.html">View jobs <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="topic-card">
+            <h3>Get career help</h3>
+            <p>Resume builder, interview coaching, networking and application training.</p>
+            <a class="learn-more" href="resources.html">Open resources <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="topic-card">
+            <h3>Report a scam</h3>
+            <p>Saw a suspicious job offer or someone asking for money? Tell us.</p>
+            <a class="learn-more" href="contact.html?topic=feedback#contactForm">Report it <span aria-hidden="true">→</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow">FAQ</span>
+          <h2>Frequently asked questions</h2>
+        </div>
+        <div class="faq">
+          <details><summary>How do I post a job on AJ Job Seekers?</summary><div class="ans">Choose “Employer: post a job” in the form above and fill in the company name, job title, number of positions and the application due date. We review the details and publish the vacancy for you on the <a href="jobs.html">Jobs page</a>.</div></details>
+          <details><summary>Is it free for job seekers?</summary><div class="ans">Yes. Searching vacancies, the coaching tools and the guides are free for job seekers. We will never ask you for money to apply for a job.</div></details>
+          <details><summary>How long will you take to reply?</summary><div class="ans">We aim to reply within one to two working days. Messages sent on weekends or public holidays are answered on the next working day.</div></details>
+          <details><summary>Someone asked me to pay for a job. Is that from you?</summary><div class="ans">No. AJ Job Seekers never charges applicants, and real employers do not either. Please do not pay, and report the message to us using “Feedback or report a problem” so that we can warn others.</div></details>
+          <details><summary>Can you edit or remove a vacancy I posted?</summary><div class="ans">Yes. Send us the company name and job title with the change you want, and we will update or remove the vacancy.</div></details>
+          <details><summary>I need help with my CV or interview. Where do I start?</summary><div class="ans">Try the <a href="resume.html">Resume builder</a>, the <a href="interview-coaching.html">Interview Coaching</a> and the <a href="career-guides.html">Career Guides</a>. If you are still stuck, choose “Job seeker support” and tell us what you need.</div></details>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer no-print">
+    <div class="container footer-container">
+      <div class="footer-col footer-about">
+        <h4>AJ JOB SEEKERS</h4>
+        <p>
+          AJ Job Seekers provides resources, guidance, and real opportunities to help
+          individuals find meaningful employment. We connect motivated applicants with
+          trusted employers.
+        </p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="jobs.html">Jobs</a></li>
+          <li><a href="resources.html">Resources</a></li>
+          <li><a href="join.html">Find Job</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Resources</h4>
+        <ul>
+          <li><a href="resume.html">Resume Writing</a></li>
+          <li><a href="application-tips.html">Cover Letter Tips</a></li>
+          <li><a href="interview-coaching.html">Interview Preparation</a></li>
+          <li><a href="jobs.html">Job Search Strategies</a></li>
+          <li><a href="career-guides.html">Career Development</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul class="contact-list">
+          <li>
+            <a href="https://jonesawuah.github.io/wdd231/finalproject/index.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+              Website
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+              Email
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"/></svg>
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href="contact.html" class="contact-link">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.91.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+              Telephone
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container footer-bottom-inner">
+        <p>&copy; <span id="year"></span> AJ Job Seekers. All rights reserved.</p>
+        <p>
+          <a href="#">Privacy Policy</a> ·
+          <a href="#">Cookies Policy</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="scripts/contact.js"></script>
+  <script src="scripts/nav.js" defer></script>
+</body>
+</html>
