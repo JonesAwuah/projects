@@ -1,0 +1,1843 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJ Solution Consult Blog | Compliance, Payroll & HR Insights</title>
+  <meta
+    name="description"
+    content="Read AJ Solution Consult articles on statutory compliance, SSNIT, payroll, HR support, tax administration, and business documentation in Ghana."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --primary: #d1006f;
+      --primary-dark: #1d2233;
+      --primary-soft: #fde9f3;
+      --accent: #ff9a1f;
+      --text: #17202a;
+      --text-light: #5f6b76;
+      --white: #ffffff;
+      --bg: #f5f7f9;
+      --card: #ffffff;
+      --border: #dfe5ea;
+      --footer: #151a2b;
+      --success: #1f7a45;
+      --danger: #ad2e2e;
+      --shadow: 0 16px 40px rgba(13, 39, 63, 0.08);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max-width: 1180px;
+      --article-width: 860px;
+      --transition: all 0.25s ease;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: "Manrope", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button, input, textarea, select { font: inherit; }
+    button { cursor: pointer; }
+    ul { list-style: none; }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .article-container {
+      width: min(92%, var(--article-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0,0,0,0.06);
+    }
+
+    .topbar-inner {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 0;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .aj-mark { --s: 54px; position: relative; width: var(--s); height: var(--s); flex-shrink: 0; display: block; }
+    .aj-mark .ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      background: linear-gradient(145deg, #ff9a1f 0%, #f0453a 38%, #e4007c 72%, #b5179e 100%);
+      -webkit-mask: radial-gradient(circle calc(var(--s) * 0.5) at 72% 50%, transparent 97%, #000 100%);
+              mask: radial-gradient(circle calc(var(--s) * 0.5) at 72% 50%, transparent 97%, #000 100%);
+    }
+    .aj-mark .inner {
+      position: absolute; width: 68%; height: 68%; left: 17%; top: 16%; border-radius: 50%; background: #3b4250;
+      -webkit-mask: radial-gradient(circle calc(var(--s) * 0.34) at 24% 50%, transparent 97%, #000 100%);
+              mask: radial-gradient(circle calc(var(--s) * 0.34) at 24% 50%, transparent 97%, #000 100%);
+    }
+    .aj-mark .mono {
+      position: absolute; inset: 0; display: grid; place-items: center; line-height: 1;
+      font-weight: 800; font-size: calc(var(--s) * 0.3); letter-spacing: -0.02em; color: #1d2233;
+      padding-right: calc(var(--s) * 0.06);
+    }
+    .aj-mark.on-dark .inner { background: #cfd6e2; }
+    .aj-mark.on-dark .mono { color: #ffffff; }
+
+    .site-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .nav ul {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav a {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #31414f;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+    }
+
+    .nav a.active::after,
+    .nav a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 20px;
+    }
+
+    .header-actions {
+      display: flex;
+      gap: 12px;
+      align-items: center;
+    }
+
+    .header-cta,
+    .admin-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: var(--transition);
+    }
+
+    .header-cta {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .header-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .admin-link {
+      border: 1px solid rgba(209, 0, 111, 0.14);
+      color: var(--primary);
+      background: #fff;
+    }
+
+    .admin-link:hover {
+      background: rgba(209, 0, 111, 0.06);
+    }
+
+    .hamburger {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: none;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      border-radius: 12px;
+    }
+
+    .hero {
+      position: relative;
+      padding: 92px 0 68px;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(228, 0, 124, 0.38), transparent 46%), linear-gradient(135deg, rgba(29, 34, 51, 0.96), rgba(59, 66, 80, 0.95)),
+        url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1600&q=80") center/cover no-repeat;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.22), rgba(0,0,0,0.05));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255,255,255,0.18);
+      background: rgba(255,255,255,0.1);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5vw, 4.3rem);
+      line-height: 1.08;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 62ch;
+      font-size: 1.03rem;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-top: 24px;
+    }
+
+    .hero-actions a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 13px 20px;
+      border-radius: 999px;
+      font-weight: 700;
+    }
+
+    .hero-actions .primary {
+      background: #fff;
+      color: var(--primary-dark);
+    }
+
+    .hero-actions .secondary {
+      border: 1px solid rgba(255,255,255,0.28);
+      color: #fff;
+      background: rgba(255,255,255,0.08);
+    }
+
+    .blog-section {
+      padding: 72px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: #0f1c28;
+    }
+
+    .section-head p {
+      color: var(--text-light);
+      max-width: 65ch;
+    }
+
+    .featured-post {
+      display: grid;
+      grid-template-columns: 1.05fr 0.95fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18,32,46,0.05);
+      margin-bottom: 30px;
+    }
+
+    .featured-post img,
+    .post-card img {
+      width: 100%;
+      object-fit: cover;
+    }
+
+    .featured-post img {
+      height: 100%;
+      min-height: 320px;
+      border-radius: var(--radius-lg);
+    }
+
+    .post-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 16px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .featured-content h3 {
+      font-size: 1.8rem;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #10202c;
+    }
+
+    .featured-content p,
+    .post-content p {
+      color: var(--text-light);
+    }
+
+    .featured-content p {
+      margin-bottom: 18px;
+      max-width: 62ch;
+    }
+
+    .post-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 18px;
+      color: #64707c;
+      font-size: 0.92rem;
+    }
+
+    .post-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .btn-outline,
+    .action-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(209, 0, 111, 0.14);
+      color: var(--primary);
+      font-weight: 700;
+      background: #fff;
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover,
+    .action-btn:hover {
+      background: rgba(209, 0, 111, 0.06);
+    }
+
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .post-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18,32,46,0.05);
+      transition: var(--transition);
+    }
+
+    .post-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .post-card img {
+      height: 220px;
+    }
+
+    .post-content {
+      padding: 24px;
+    }
+
+    .post-content h3 {
+      font-size: 1.12rem;
+      line-height: 1.35;
+      margin: 10px 0;
+      color: #132230;
+    }
+
+    .pagination {
+      margin-top: 34px;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .pagination button {
+      min-width: 44px;
+      height: 44px;
+      padding: 0 16px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--white);
+      border: 1px solid var(--border);
+      color: #21303d;
+      font-weight: 700;
+    }
+
+    .pagination button.active,
+    .pagination button:hover {
+      background: var(--primary);
+      border-color: var(--primary);
+      color: var(--white);
+    }
+
+    .newsletter-box {
+      margin-top: 38px;
+      background: linear-gradient(135deg, #fdf1f6, #fbeaf2);
+      border: 1px solid rgba(209, 0, 111, 0.12);
+      border-radius: var(--radius-lg);
+      padding: 30px;
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      align-items: center;
+    }
+
+    .newsletter-box h3 {
+      font-size: 1.35rem;
+      margin-bottom: 8px;
+      color: #11202e;
+    }
+
+    .newsletter-box p {
+      color: var(--text-light);
+      max-width: 56ch;
+    }
+
+    .newsletter-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      white-space: nowrap;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .newsletter-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .article-page {
+      min-height: 100vh;
+      background: var(--bg);
+      padding-bottom: 60px;
+    }
+
+    .article-hero {
+      position: relative;
+      min-height: 55vh;
+      display: flex;
+      align-items: end;
+      background: #d1006f;
+      color: #fff;
+      overflow: hidden;
+    }
+
+    .article-hero-image {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(0.45);
+    }
+
+    .article-hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(5,18,26,0.88), rgba(5,18,26,0.25));
+    }
+
+    .article-hero-content {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      padding: 72px 0 46px;
+    }
+
+    .article-back {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 20px;
+      color: #fff;
+      font-weight: 700;
+      opacity: 0.95;
+    }
+
+    .article-back:hover {
+      opacity: 1;
+    }
+
+    .article-page .post-tag {
+      background: rgba(255,255,255,0.12);
+      color: #fff;
+      border: 1px solid rgba(255,255,255,0.16);
+    }
+
+    .article-title {
+      font-size: clamp(2rem, 5vw, 4rem);
+      line-height: 1.08;
+      max-width: 16ch;
+      margin-bottom: 16px;
+      font-weight: 800;
+    }
+
+    .article-intro {
+      max-width: 70ch;
+      font-size: 1.06rem;
+      color: rgba(255,255,255,0.92);
+    }
+
+    .article-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 18px;
+      color: rgba(255,255,255,0.88);
+      font-size: 0.95rem;
+    }
+
+    .article-meta span {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .article-body-wrap {
+      margin-top: -34px;
+      position: relative;
+      z-index: 3;
+    }
+
+    .article-card {
+      background: #fff;
+      border-radius: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18,32,46,0.05);
+      padding: 34px;
+    }
+
+    .article-body {
+      color: #24333f;
+      font-size: 1.03rem;
+      line-height: 1.9;
+    }
+
+    .article-body p + p {
+      margin-top: 18px;
+    }
+
+    .article-body h2 {
+      font-size: 1.45rem;
+      line-height: 1.25;
+      margin: 28px 0 12px;
+      color: #10202c;
+    }
+
+    .article-body ul {
+      list-style: disc;
+      padding-left: 20px;
+      color: #24333f;
+      margin-top: 12px;
+    }
+
+    .article-body li + li {
+      margin-top: 8px;
+    }
+
+    .article-cta-box {
+      margin-top: 32px;
+      padding: 24px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, #fdf1f6, #fbeaf2);
+      border: 1px solid rgba(209, 0, 111, 0.12);
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .article-cta-box h3 {
+      font-size: 1.2rem;
+      margin-bottom: 8px;
+      color: #11202e;
+    }
+
+    .article-cta-box p {
+      color: var(--text-light);
+      max-width: 56ch;
+    }
+
+    .footer {
+      background: var(--footer);
+      color: #d8e1ea;
+      margin-top: 20px;
+      padding: 64px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr 1fr;
+      gap: 28px;
+    }
+
+    .footer-brand-top {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .footer-brand .aj-mark { --s: 64px; }
+
+    .footer-brand-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: #ffffff;
+      white-space: nowrap;
+    }
+
+    .footer-brand p {
+      font-size: 0.95rem;
+      color: #b8c4cf;
+      max-width: 35ch;
+    }
+
+    .footer h4 {
+      color: #ffffff;
+      font-size: 1rem;
+      margin-bottom: 16px;
+    }
+
+    .footer ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer ul li a {
+      color: #b8c4cf;
+      font-size: 0.94rem;
+      transition: var(--transition);
+    }
+
+    .footer ul li a:hover {
+      color: #ffffff;
+      padding-left: 4px;
+    }
+
+    .footer-bottom {
+      margin-top: 38px;
+      padding-top: 18px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 0.92rem;
+      color: #95a4b2;
+    }
+
+    .nav a[href="#admin-login"],
+    .admin-link,
+    .hero-actions .secondary {
+      display: none !important;
+    }
+
+    .page[hidden] {
+      display: none !important;
+    }
+
+    .admin-shell {
+      padding: 44px 0 72px;
+    }
+
+    .admin-grid {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .panel {
+      background: #fff;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18,32,46,0.05);
+    }
+
+    .panel h2,
+    .panel h3 {
+      color: #10202c;
+      margin-bottom: 10px;
+    }
+
+    .panel p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .login-box {
+      max-width: 520px;
+      margin: 0 auto;
+    }
+
+    .form-grid {
+      display: grid;
+      gap: 14px;
+    }
+
+    label {
+      display: grid;
+      gap: 7px;
+      font-weight: 700;
+      color: #20313f;
+    }
+
+    input,
+    textarea,
+    select {
+      width: 100%;
+      border: 1px solid var(--border);
+      background: #fff;
+      border-radius: 14px;
+      padding: 13px 14px;
+      color: var(--text);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    .primary-btn,
+    .danger-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border: 0;
+      border-radius: 14px;
+      padding: 13px 18px;
+      font-weight: 800;
+    }
+
+    .primary-btn {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    .primary-btn:hover {
+      background: var(--primary-dark);
+    }
+
+    .danger-btn {
+      background: #fff1f1;
+      color: var(--danger);
+      border: 1px solid rgba(173,46,46,.18);
+    }
+
+    .danger-btn:hover {
+      background: #ffe5e5;
+    }
+
+    .muted-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 14px;
+      padding: 12px 16px;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      background: #fff;
+    }
+
+    .status {
+      margin-top: 12px;
+      font-weight: 700;
+      font-size: 0.95rem;
+    }
+
+    .status.success { color: var(--success); }
+    .status.error { color: var(--danger); }
+
+    .admin-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .article-list {
+      display: grid;
+      gap: 16px;
+      margin-top: 10px;
+    }
+
+    .admin-card {
+      display: grid;
+      grid-template-columns: 112px 1fr;
+      gap: 16px;
+      background: #fbfcfd;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 14px;
+    }
+
+    .admin-card img {
+      width: 112px;
+      height: 92px;
+      object-fit: cover;
+      border-radius: 14px;
+    }
+
+    .admin-card h4 {
+      margin-bottom: 6px;
+      color: #11202e;
+    }
+
+    .admin-card p {
+      margin-bottom: 10px;
+      font-size: 0.94rem;
+    }
+
+    .admin-card .meta {
+      font-size: 0.86rem;
+      color: var(--text-light);
+      margin-bottom: 10px;
+    }
+
+    .inline-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .small-btn {
+      padding: 10px 14px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      border: 1px solid rgba(209, 0, 111, 0.14);
+      background: #fff;
+      color: var(--primary);
+    }
+
+    .small-btn.delete {
+      color: var(--danger);
+      border-color: rgba(173,46,46,.18);
+    }
+
+    .empty-state {
+      padding: 26px;
+      border: 1px dashed rgba(209, 0, 111, 0.2);
+      border-radius: 16px;
+      text-align: center;
+      color: var(--text-light);
+    }
+
+    .preview-image {
+      width: 100%;
+      max-height: 220px;
+      object-fit: cover;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      margin-top: 10px;
+    }
+
+    .admin-topbar {
+      background: linear-gradient(135deg, #e8452c 0%, #e4007c 62%, #a3158f 100%);
+      color: #fff;
+      padding: 48px 0 26px;
+    }
+
+    .admin-topbar p {
+      color: rgba(255,255,255,.86);
+    }
+
+    .back-link {
+      color: #fff;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+
+    @media (max-width: 992px) {
+      .featured-post,
+      .posts-grid,
+      .footer-grid,
+      .newsletter-box,
+      .admin-grid,
+      .article-cta-box {
+        grid-template-columns: 1fr;
+      }
+
+      .newsletter-box,
+      .article-cta-box {
+        display: grid;
+      }
+
+      .hamburger {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .nav {
+        position: absolute;
+        top: 100%;
+        right: 4%;
+        width: min(300px, 92vw);
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0,0,0,0.06);
+        padding: 18px;
+        display: none;
+      }
+
+      .nav.show {
+        display: block;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero,
+      .article-hero {
+        padding-top: 0;
+      }
+
+      .hero {
+        padding: 78px 0 56px;
+      }
+
+      .featured-post,
+      .post-content,
+      .newsletter-box,
+      .panel,
+      .article-card {
+        padding: 22px;
+      }
+
+      .admin-card {
+        grid-template-columns: 1fr;
+      }
+
+      .admin-card img {
+        width: 100%;
+        height: 180px;
+      }
+
+      .article-body-wrap {
+        margin-top: -18px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .aj-mark { --s: 44px; }
+
+      .site-name {
+        font-size: 0.95rem;
+      }
+
+      .topbar-inner {
+        gap: 12px;
+      }
+
+      .newsletter-btn,
+      .btn-outline,
+      .hero-actions a,
+      .primary-btn,
+      .muted-btn,
+      .danger-btn,
+      .action-btn {
+        width: 100%;
+      }
+
+      .header-actions {
+        display: none;
+      }
+
+      .article-title {
+        max-width: 100%;
+      }
+    }
+  
+    /* ===== AJ SOLUTION CONSULT: two-line name beside the logo ===== */
+    .site-name { display: flex; flex-direction: column; justify-content: center; line-height: 1; font-size: inherit; letter-spacing: normal; }
+    .site-name .sn-top { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.34em; color: var(--primary); text-transform: uppercase; }
+    .site-name .sn-big { font-size: 1.45rem; font-weight: 800; letter-spacing: 0.01em; color: #1d2233; margin-top: 5px; }
+    .footer-brand-name { display: flex; flex-direction: column; justify-content: center; line-height: 1; font-size: inherit; letter-spacing: normal; }
+    .footer-brand-name .sn-top { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.34em; color: #ffb347; text-transform: uppercase; }
+    .footer-brand-name .sn-big { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.01em; color: #ffffff; margin-top: 5px; }
+    @media (max-width: 520px) {
+      .site-name .sn-top { font-size: 0.62rem; letter-spacing: 0.28em; }
+      .site-name .sn-big { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <div id="blogPage" class="page">
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a href="#blog" class="brand" aria-label="AJ Solution Consult Home">
+          <span class="aj-mark" aria-hidden="true"><span class="ring"></span><span class="inner"></span><span class="mono">AJ</span></span>
+          <span class="site-name"><span class="sn-top">Solution</span><span class="sn-big">CONSULT</span></span>
+        </a>
+
+        <button class="hamburger" id="menuToggle" aria-label="Toggle navigation menu">
+          <i class="fas fa-bars"></i>
+        </button>
+
+        <nav class="nav" id="mainNav" aria-label="Primary navigation">
+          <ul>
+            <li><a href="new.html">Home</a></li>
+            <li><a href="new-services.html">Services</a></li>
+            <li><a href="new-request.html">Request</a></li>
+            <li><a href="#blog" class="active">Blog</a></li>
+            <li><a href="new-contact.html">Contact</a></li>
+            <li><a href="#admin-login">Admin</a></li>
+          </ul>
+        </nav>
+
+        <div class="header-actions">
+          <a href="new-request.html" class="header-cta">Request Service</a>
+        </div>
+      </div>
+    </header>
+
+    <section class="hero">
+      <div class="container">
+        <div class="hero-content">
+          <div class="eyebrow"><i class="fas fa-newspaper"></i> AJ Solution Consult Blog</div>
+          <h1>Insights and practical guidance for compliance, payroll, and HR support.</h1>
+          <p>
+            Explore articles, updates, and useful business guidance on statutory obligations,
+            employer responsibilities, payroll processes, documentation, and professional support services.
+          </p>
+          <div class="hero-actions">
+            <a href="#articles" class="primary"><i class="fas fa-book-open"></i> Browse Articles</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <main class="blog-section" id="articles">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Latest Articles</span>
+          <h2>Helpful reading for businesses, employers, and professionals.</h2>
+          <p>
+            This blog section shares practical insights that can help clients better understand
+            the processes, responsibilities, and support areas connected to AJ Solution Consult services.
+          </p>
+        </div>
+
+        <section id="featuredWrap"></section>
+        <section class="posts-grid" id="postsGrid"></section>
+        <div class="pagination" id="pagination"></div>
+
+        <div class="newsletter-box">
+          <div>
+            <h3>Need support instead of reading?</h3>
+            <p>
+              If you already know the assistance you need, you can skip the articles and submit
+              your service request directly through AJ Solution Consult.
+            </p>
+          </div>
+          <a href="new-request.html" class="newsletter-btn">Request a Service</a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <div class="footer-brand-top">
+              <span class="aj-mark on-dark" aria-hidden="true"><span class="ring"></span><span class="inner"></span><span class="mono">AJ</span></span>
+              <span class="footer-brand-name"><span class="sn-top">Solution</span><span class="sn-big">CONSULT</span></span>
+            </div>
+
+            <p>
+              AJ Solution Consult delivers dependable support in statutory compliance,
+              payroll administration, HR assistance, and business documentation
+              for individuals and organisations that value timely and professional service.
+            </p>
+          </div>
+
+          <div>
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="new.html">Home</a></li>
+              <li><a href="new-services.html">Services</a></li>
+              <li><a href="new-request.html">Request</a></li>
+              <li><a href="#blog">Blog</a></li>
+              <li><a href="new-contact.html">Contact</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Our Services</h4>
+            <ul>
+              <li><a href="new-ssnit.html">SSNIT Services</a></li>
+              <li><a href="new-gra.html">GRA Services</a></li>
+              <li><a href="new-rgd.html">Registrar General</a></li>
+              <li><a href="new-doc.html">Document Services</a></li>
+              <li><a href="new-hr.html">HR Support Services</a></li>
+              <li><a href="new-cons.html">Consultation Services</a></li>
+            </ul>
+          </div>
+
+          <div>
+            <h4>Contact</h4>
+            <ul>
+              <li><a href="mailto:info@ajconsult.com">info@ajconsult.com</a></li>
+              <li><a href="tel:+233240000000">+233 24 000 0000</a></li>
+              <li><a href="https://wa.me/233240000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+              <li><a href="new-contact.html">Enquiry Form</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="footer-bottom">
+          <p>&copy; <span id="year"></span> AJ Solution Consult. All rights reserved.</p>
+          <p>Trusted statutory, payroll, and HR support services.</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <div id="articlePage" class="page" hidden>
+    <section class="article-page">
+      <section class="article-hero">
+        <img id="articleHeroImage" class="article-hero-image" src="" alt="" />
+        <div class="article-hero-overlay"></div>
+
+        <div class="article-hero-content">
+          <div class="article-container">
+            <a href="#blog" class="article-back" id="articleBackLink">
+              <i class="fas fa-arrow-left"></i> Back to Blog
+            </a>
+            <div class="post-tag" id="articleCategoryTag">Article</div>
+            <h1 class="article-title" id="articleTitle"></h1>
+            <p class="article-intro" id="articleSummary"></p>
+
+            <div class="article-meta">
+              <span><i class="fas fa-calendar-alt"></i> <span id="articleDate"></span></span>
+              <span><i class="fas fa-folder-open"></i> <span id="articleCategory"></span></span>
+              <span><i class="fas fa-clock"></i> <span id="articleReadTime"></span></span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <div class="article-body-wrap">
+        <div class="article-container">
+          <article class="article-card">
+            <div class="article-body" id="articleBody"></div>
+
+            <div class="article-cta-box">
+              <div>
+                <h3>Need help with this topic?</h3>
+                <p>
+                  AJ Solution Consult supports employers, businesses, and professionals with practical
+                  assistance in compliance, payroll, registration, documentation, and consultation services.
+                </p>
+              </div>
+              <a href="new-request.html" class="newsletter-btn">Request a Service</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <div id="adminLoginPage" class="page" hidden>
+    <section class="admin-topbar">
+      <div class="container">
+        <a href="#blog" class="back-link"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+        <h1>Blog Admin Access</h1>
+        <p>Enter the admin credentials to manage articles, images, and login settings.</p>
+      </div>
+    </section>
+
+    <main class="admin-shell">
+      <div class="container">
+        <div class="panel login-box">
+          <h2>Administrator Login</h2>
+
+          <form id="loginForm" class="form-grid">
+            <label>Username
+              <input type="text" id="loginUsername" autocomplete="username" placeholder="Enter username" required>
+            </label>
+            <label>Password
+              <input type="password" id="loginPassword" autocomplete="current-password" placeholder="Enter password" required>
+            </label>
+            <button class="primary-btn" type="submit"><i class="fas fa-right-to-bracket"></i> Log In</button>
+          </form>
+
+          <div id="loginStatus" class="status" aria-live="polite"></div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <div id="adminDashboardPage" class="page" hidden>
+    <section class="admin-topbar">
+      <div class="container">
+        <a href="#blog" class="back-link"><i class="fas fa-arrow-left"></i> Back to Blog</a>
+        <h1>Blog Admin Dashboard</h1>
+        <p>View all articles, add new posts, edit existing content, remove articles, and update admin login details.</p>
+      </div>
+    </section>
+
+    <main class="admin-shell">
+      <div class="container admin-grid">
+        <section class="panel">
+          <h2>Articles</h2>
+          <p>All blog content is managed here. Added or edited articles update the public blog list immediately during this session.</p>
+          <div class="admin-actions">
+            <button type="button" class="muted-btn" id="showAddFormBtn"><i class="fas fa-plus"></i> Add New Article</button>
+            <button type="button" class="muted-btn" id="logoutBtn"><i class="fas fa-right-from-bracket"></i> Log Out</button>
+          </div>
+          <div id="articleStatus" class="status" aria-live="polite"></div>
+          <div id="articleList" class="article-list"></div>
+        </section>
+
+        <aside>
+          <section class="panel" id="editorPanel">
+            <h3 id="editorTitle">Add New Article</h3>
+            <p>Create a new article or edit an existing one. Image field accepts a full image URL.</p>
+
+            <form id="articleForm" class="form-grid">
+              <input type="hidden" id="articleId">
+
+              <label>Title
+                <input type="text" id="articleTitleInput" required>
+              </label>
+
+              <label>Category
+                <input type="text" id="articleCategoryInput" placeholder="Compliance, Payroll, HR & Payroll" required>
+              </label>
+
+              <label>Date Label
+                <input type="text" id="articleDateInput" placeholder="June 2026" required>
+              </label>
+
+              <label>Read Time
+                <input type="text" id="articleReadTimeInput" placeholder="4 min read" required>
+              </label>
+
+              <label>Image URL
+                <input type="url" id="articleImageInput" placeholder="https://..." required>
+              </label>
+
+              <label>Summary
+                <textarea id="articleSummaryInput" required></textarea>
+              </label>
+
+              <label>Article Body
+                <textarea id="articleBodyInput" required></textarea>
+              </label>
+
+              <label>
+                <input type="checkbox" id="articleFeaturedInput"> Mark as featured article
+              </label>
+
+              <div class="admin-actions">
+                <button class="primary-btn" type="submit"><i class="fas fa-floppy-disk"></i> Save Article</button>
+                <button class="muted-btn" type="button" id="resetFormBtn">Reset Form</button>
+              </div>
+            </form>
+
+            <img id="imagePreview" class="preview-image" alt="Selected article preview" hidden>
+          </section>
+
+          <section class="panel">
+            <h3>Change Admin Credentials</h3>
+            <p>Update the username and password used for this static admin page during the current session.</p>
+
+            <form id="credentialsForm" class="form-grid">
+              <label>New Username
+                <input type="text" id="newUsername" required>
+              </label>
+              <label>New Password
+                <input type="password" id="newPassword" required>
+              </label>
+              <button class="primary-btn" type="submit"><i class="fas fa-key"></i> Update Login Details</button>
+            </form>
+
+            <div id="credentialsStatus" class="status" aria-live="polite"></div>
+          </section>
+        </aside>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    const state = {
+      credentials: {
+        username: 'ajconsult',
+        password: 'ajconsult2026'
+      },
+      loggedIn: false,
+      currentPage: 1,
+      perPage: 3,
+      currentArticleId: null,
+      articles: [
+        {
+          id: 1,
+          featured: true,
+          category: 'Compliance',
+          title: 'Understanding SSNIT compliance and why employers should stay ahead.',
+          summary: 'Staying compliant with SSNIT obligations helps businesses reduce avoidable issues, maintain orderly employee records, and manage statutory responsibilities with confidence.',
+          body: `SSNIT compliance is not only a statutory matter. It also affects internal records, employee confidence, and the ability of a business to respond well during reviews, reconciliations, or formal checks.
+
+Many employers pay attention to SSNIT only when a specific issue comes up. In practice, it is better to approach compliance as part of regular business administration, because delays and inconsistencies often become more difficult to resolve over time.
+
+A well-managed contribution process supports cleaner records, better accountability, and smoother engagement with statutory institutions. It also helps employers respond more confidently when documentation is requested.
+
+Businesses that stay ahead usually benefit from better organisation, fewer avoidable corrections, and stronger operational discipline across payroll and administrative processes.`,
+          date: 'January 2026',
+          readTime: '4 min read',
+          image: 'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          id: 2,
+          featured: false,
+          category: 'HR & Payroll',
+          title: 'Why payroll accuracy matters for trust, records, and compliance.',
+          summary: 'Reliable payroll processes help businesses pay staff correctly, maintain cleaner records, and reduce errors that can affect compliance and employee trust.',
+          body: `Payroll accuracy supports both financial discipline and staff confidence. A dependable payroll process helps employers manage salary records, deductions, and reporting with greater consistency.
+
+When payroll errors happen repeatedly, the impact goes beyond figures. Staff trust can weaken, administrative corrections increase, and management may spend unnecessary time resolving avoidable issues.
+
+Strong payroll systems improve record quality, support better decision-making, and help organisations stay prepared for reviews, internal controls, and statutory obligations.
+
+Even small process improvements can significantly reduce recurring mistakes and help a business operate with more confidence.`,
+          date: 'December 2025',
+          readTime: '3 min read',
+          image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          id: 3,
+          featured: false,
+          category: 'Business',
+          title: 'Registrar General requirements every business should understand.',
+          summary: 'Business owners benefit from understanding the obligations that support proper company records, annual filing discipline, and legal standing.',
+          body: `A properly maintained business record is part of responsible corporate administration. Many organisations focus on registration at the beginning but pay less attention to ongoing filing obligations.
+
+Understanding Registrar General requirements helps businesses maintain good standing and avoid issues that can arise from missed filings or outdated records.
+
+It is often easier to keep records current than to correct multiple gaps later. Timely attention to company information, filing obligations, and official updates helps reduce future delays.
+
+Businesses that maintain proper records usually find it easier to support transactions, formal applications, and internal governance processes.`,
+          date: 'November 2025',
+          readTime: '4 min read',
+          image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=1200&q=80'
+        },
+        {
+          id: 4,
+          featured: false,
+          category: 'Consultation',
+          title: 'When a business should seek professional compliance advice.',
+          summary: 'Early consultation helps businesses make better decisions, avoid delays, and approach statutory obligations with stronger preparation.',
+          body: `Many businesses wait until a compliance issue becomes urgent before seeking professional support. In many cases, earlier guidance would have made the process easier and less disruptive.
+
+Professional consultation can help employers clarify responsibilities, organise documentation, and choose better next steps before avoidable problems develop.
+
+This is especially useful where a business is growing, making structural changes, responding to a regulatory request, or managing unresolved statutory matters.
+
+Early advice often improves preparation, reduces uncertainty, and helps management act with greater confidence and direction.`,
+          date: 'October 2025',
+          readTime: '3 min read',
+          image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?auto=format&fit=crop&w=1200&q=80'
+        }
+      ]
+    };
+
+    const blogPage = document.getElementById('blogPage');
+    const articlePage = document.getElementById('articlePage');
+    const adminLoginPage = document.getElementById('adminLoginPage');
+    const adminDashboardPage = document.getElementById('adminDashboardPage');
+
+    const mainNav = document.getElementById('mainNav');
+    const menuToggle = document.getElementById('menuToggle');
+    const year = document.getElementById('year');
+
+    const featuredWrap = document.getElementById('featuredWrap');
+    const postsGrid = document.getElementById('postsGrid');
+    const pagination = document.getElementById('pagination');
+
+    const articleList = document.getElementById('articleList');
+    const imagePreview = document.getElementById('imagePreview');
+    const articleForm = document.getElementById('articleForm');
+    const credentialsForm = document.getElementById('credentialsForm');
+    const loginForm = document.getElementById('loginForm');
+
+    const articleHeroImage = document.getElementById('articleHeroImage');
+    const articleCategoryTag = document.getElementById('articleCategoryTag');
+    const articleTitle = document.getElementById('articleTitle');
+    const articleSummary = document.getElementById('articleSummary');
+    const articleDate = document.getElementById('articleDate');
+    const articleCategory = document.getElementById('articleCategory');
+    const articleReadTime = document.getElementById('articleReadTime');
+    const articleBody = document.getElementById('articleBody');
+
+    function escapeHtml(value) {
+      return String(value)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#039;');
+    }
+
+    function formatArticleBody(text) {
+      return String(text)
+        .split(/\n{2,}/)
+        .map(paragraph => `<p>${escapeHtml(paragraph).replace(/\n/g, '<br>')}</p>`)
+        .join('');
+    }
+
+    function showPage(pageName) {
+      blogPage.hidden = pageName !== 'blog';
+      articlePage.hidden = pageName !== 'article';
+      adminLoginPage.hidden = pageName !== 'admin-login';
+      adminDashboardPage.hidden = pageName !== 'admin-dashboard';
+
+      if (pageName === 'blog') renderBlog();
+      if (pageName === 'article') renderArticle(state.currentArticleId);
+      if (pageName === 'admin-dashboard') renderAdminList();
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function getFeaturedArticle() {
+      return state.articles.find(article => article.featured) || state.articles[0];
+    }
+
+    function getNonFeaturedArticles() {
+      const featured = getFeaturedArticle();
+      return state.articles.filter(article => article.id !== featured.id);
+    }
+
+    function renderBlog() {
+      const featured = getFeaturedArticle();
+      if (!featured) {
+        featuredWrap.innerHTML = '<div class="empty-state">No featured article available.</div>';
+        postsGrid.innerHTML = '';
+        pagination.innerHTML = '';
+        return;
+      }
+
+      featuredWrap.innerHTML = `
+        <article class="featured-post">
+          <div class="featured-content">
+            <div class="post-tag"><i class="fas fa-shield-alt"></i> Featured Article</div>
+            <h3>${escapeHtml(featured.title)}</h3>
+            <p>${escapeHtml(featured.summary)}</p>
+            <div class="post-meta">
+              <span><i class="fas fa-calendar-alt"></i> ${escapeHtml(featured.date)}</span>
+              <span><i class="fas fa-folder-open"></i> ${escapeHtml(featured.category)}</span>
+              <span><i class="fas fa-clock"></i> ${escapeHtml(featured.readTime)}</span>
+            </div>
+            <button class="btn-outline" type="button" data-read-id="${featured.id}">
+              <i class="fas fa-book-open"></i> Read Article
+            </button>
+          </div>
+          <img src="${escapeHtml(featured.image)}" alt="Featured article image for ${escapeHtml(featured.title)}" loading="lazy">
+        </article>
+      `;
+
+      const items = getNonFeaturedArticles();
+      const totalPages = Math.max(1, Math.ceil(items.length / state.perPage));
+      if (state.currentPage > totalPages) state.currentPage = totalPages;
+
+      const start = (state.currentPage - 1) * state.perPage;
+      const visible = items.slice(start, start + state.perPage);
+
+      postsGrid.innerHTML = visible.length ? visible.map(article => `
+        <article class="post-card">
+          <img src="${escapeHtml(article.image)}" alt="Article image for ${escapeHtml(article.title)}" loading="lazy">
+          <div class="post-content">
+            <div class="post-tag">${escapeHtml(article.category)}</div>
+            <h3>${escapeHtml(article.title)}</h3>
+            <p>${escapeHtml(article.summary)}</p>
+            <div class="post-meta">
+              <span><i class="fas fa-calendar-alt"></i> ${escapeHtml(article.date)}</span>
+              <span><i class="fas fa-clock"></i> ${escapeHtml(article.readTime)}</span>
+            </div>
+            <button class="btn-outline" type="button" data-read-id="${article.id}">
+              <i class="fas fa-book-open"></i> Read Article
+            </button>
+          </div>
+        </article>
+      `).join('') : '<div class="empty-state">No articles available yet.</div>';
+
+      pagination.innerHTML = '';
+      if (totalPages > 1) {
+        for (let i = 1; i <= totalPages; i++) {
+          const btn = document.createElement('button');
+          btn.type = 'button';
+          btn.textContent = i;
+          if (i === state.currentPage) btn.classList.add('active');
+          btn.addEventListener('click', () => {
+            state.currentPage = i;
+            renderBlog();
+          });
+          pagination.appendChild(btn);
+        }
+      }
+
+      attachReadButtons();
+    }
+
+    function openArticle(id) {
+      const article = state.articles.find(item => item.id === Number(id));
+      if (!article) return;
+      state.currentArticleId = article.id;
+      location.hash = `#article-${article.id}`;
+    }
+
+    function renderArticle(id) {
+      const article = state.articles.find(item => item.id === Number(id));
+      if (!article) {
+        location.hash = '#blog';
+        return;
+      }
+
+      articleHeroImage.src = article.image;
+      articleHeroImage.alt = `Article image for ${article.title}`;
+      articleCategoryTag.textContent = article.category;
+      articleTitle.textContent = article.title;
+      articleSummary.textContent = article.summary;
+      articleDate.textContent = article.date;
+      articleCategory.textContent = article.category;
+      articleReadTime.textContent = article.readTime;
+      articleBody.innerHTML = formatArticleBody(article.body);
+    }
+
+    function attachReadButtons() {
+      document.querySelectorAll('[data-read-id]').forEach(btn => {
+        btn.addEventListener('click', () => openArticle(btn.dataset.readId));
+      });
+    }
+
+    function setStatus(id, message, type) {
+      const el = document.getElementById(id);
+      el.textContent = message;
+      el.className = `status ${type || ''}`.trim();
+    }
+
+    function renderAdminList() {
+      if (!state.loggedIn) {
+        location.hash = '#admin-login';
+        return;
+      }
+
+      const sorted = [...state.articles].sort((a, b) => b.id - a.id);
+
+      articleList.innerHTML = sorted.length ? sorted.map(article => `
+        <article class="admin-card">
+          <img src="${escapeHtml(article.image)}" alt="Preview image for ${escapeHtml(article.title)}" loading="lazy">
+          <div>
+            <h4>${escapeHtml(article.title)}</h4>
+            <div class="meta">${escapeHtml(article.category)} · ${escapeHtml(article.date)} · ${escapeHtml(article.readTime)}${article.featured ? ' · Featured' : ''}</div>
+            <p>${escapeHtml(article.summary)}</p>
+            <div class="inline-actions">
+              <button class="small-btn" type="button" data-edit-id="${article.id}"><i class="fas fa-pen"></i> Edit</button>
+              <button class="small-btn" type="button" data-open-id="${article.id}"><i class="fas fa-eye"></i> View</button>
+              <button class="small-btn delete" type="button" data-delete-id="${article.id}"><i class="fas fa-trash"></i> Remove</button>
+            </div>
+          </div>
+        </article>
+      `).join('') : '<div class="empty-state">No articles added yet.</div>';
+
+      articleList.querySelectorAll('[data-edit-id]').forEach(btn => {
+        btn.addEventListener('click', () => populateForm(Number(btn.dataset.edit-id || btn.dataset.editId)));
+      });
+
+      articleList.querySelectorAll('[data-open-id]').forEach(btn => {
+        btn.addEventListener('click', () => openArticle(Number(btn.dataset.openId)));
+      });
+
+      articleList.querySelectorAll('[data-delete-id]').forEach(btn => {
+        btn.addEventListener('click', () => deleteArticle(Number(btn.dataset.deleteId)));
+      });
+    }
+
+    function populateForm(id) {
+      const article = state.articles.find(item => item.id === id);
+      if (!article) return;
+
+      document.getElementById('editorTitle').textContent = 'Edit Article';
+      document.getElementById('articleId').value = article.id;
+      document.getElementById('articleTitleInput').value = article.title;
+      document.getElementById('articleCategoryInput').value = article.category;
+      document.getElementById('articleDateInput').value = article.date;
+      document.getElementById('articleReadTimeInput').value = article.readTime;
+      document.getElementById('articleImageInput').value = article.image;
+      document.getElementById('articleSummaryInput').value = article.summary;
+      document.getElementById('articleBodyInput').value = article.body;
+      document.getElementById('articleFeaturedInput').checked = article.featured;
+      updatePreview(article.image);
+      document.getElementById('editorPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function resetArticleForm() {
+      articleForm.reset();
+      document.getElementById('articleId').value = '';
+      document.getElementById('editorTitle').textContent = 'Add New Article';
+      imagePreview.hidden = true;
+    }
+
+    function updatePreview(url) {
+      if (!url) {
+        imagePreview.hidden = true;
+        return;
+      }
+      imagePreview.src = url;
+      imagePreview.hidden = false;
+    }
+
+    function deleteArticle(id) {
+      const article = state.articles.find(item => item.id === id);
+      if (!article) return;
+
+      const approved = confirm(`Remove article: ${article.title}?`);
+      if (!approved) return;
+
+      state.articles = state.articles.filter(item => item.id !== id);
+
+      if (!state.articles.some(item => item.featured) && state.articles.length) {
+        state.articles[0].featured = true;
+      }
+
+      renderAdminList();
+      renderBlog();
+      setStatus('articleStatus', 'Article removed successfully.', 'success');
+      resetArticleForm();
+    }
+
+    articleForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const idValue = document.getElementById('articleId').value;
+      const payload = {
+        id: idValue ? Number(idValue) : Date.now(),
+        title: document.getElementById('articleTitleInput').value.trim(),
+        category: document.getElementById('articleCategoryInput').value.trim(),
+        date: document.getElementById('articleDateInput').value.trim(),
+        readTime: document.getElementById('articleReadTimeInput').value.trim(),
+        image: document.getElementById('articleImageInput').value.trim(),
+        summary: document.getElementById('articleSummaryInput').value.trim(),
+        body: document.getElementById('articleBodyInput').value.trim(),
+        featured: document.getElementById('articleFeaturedInput').checked
+      };
+
+      if (payload.featured) {
+        state.articles = state.articles.map(item => ({ ...item, featured: false }));
+      }
+
+      const existingIndex = state.articles.findIndex(item => item.id === payload.id);
+
+      if (existingIndex >= 0) {
+        state.articles[existingIndex] = payload;
+        setStatus('articleStatus', 'Article updated successfully.', 'success');
+      } else {
+        if (!state.articles.length) payload.featured = true;
+        state.articles.unshift(payload);
+        setStatus('articleStatus', 'New article added successfully.', 'success');
+      }
+
+      renderAdminList();
+      renderBlog();
+      resetArticleForm();
+    });
+
+    credentialsForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const newUsername = document.getElementById('newUsername').value.trim();
+      const newPassword = document.getElementById('newPassword').value.trim();
+
+      if (!newUsername || !newPassword) {
+        setStatus('credentialsStatus', 'Both username and password are required.', 'error');
+        return;
+      }
+
+      state.credentials.username = newUsername;
+      state.credentials.password = newPassword;
+      document.getElementById('newPassword').value = '';
+      setStatus('credentialsStatus', 'Login details updated for this session.', 'success');
+    });
+
+    loginForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const username = document.getElementById('loginUsername').value.trim();
+      const password = document.getElementById('loginPassword').value.trim();
+
+      if (username === state.credentials.username && password === state.credentials.password) {
+        state.loggedIn = true;
+        setStatus('loginStatus', 'Login successful. Opening dashboard...', 'success');
+        setTimeout(() => { location.hash = '#admin-dashboard'; }, 350);
+      } else {
+        state.loggedIn = false;
+        setStatus('loginStatus', 'Invalid username or password.', 'error');
+      }
+    });
+
+    document.getElementById('logoutBtn').addEventListener('click', () => {
+      state.loggedIn = false;
+      setStatus('loginStatus', 'You have been logged out.', 'success');
+      location.hash = '#admin-login';
+    });
+
+    document.getElementById('showAddFormBtn').addEventListener('click', () => {
+      resetArticleForm();
+      document.getElementById('editorPanel').scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+
+    document.getElementById('resetFormBtn').addEventListener('click', resetArticleForm);
+    document.getElementById('articleImageInput').addEventListener('input', (e) => updatePreview(e.target.value.trim()));
+
+    menuToggle.addEventListener('click', function () {
+      mainNav.classList.toggle('show');
+    });
+
+    year.textContent = new Date().getFullYear();
+
+    function handleRoute() {
+      const hash = window.location.hash || '#blog';
+
+      if (hash === '#admin-login') {
+        showPage('admin-login');
+        return;
+      }
+
+      if (hash === '#admin-dashboard') {
+        showPage(state.loggedIn ? 'admin-dashboard' : 'admin-login');
+        return;
+      }
+
+      if (hash.startsWith('#article-')) {
+        const id = hash.replace('#article-', '');
+        state.currentArticleId = Number(id);
+        showPage('article');
+        return;
+      }
+
+      showPage('blog');
+    }
+
+    window.addEventListener('hashchange', handleRoute);
+    handleRoute();
+    renderBlog();
+  </script>
+</body>
+</html>

@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJ Solution Consult | GRA Services</title>
+  <meta
+    name="description"
+    content="AJ Solution Consult provides GRA tax registration, TIN support, VAT filing, PAYE administration, tax compliance review, and tax clearance certificate assistance for businesses and individuals in Ghana."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --primary: #d1006f;
+      --primary-dark: #1d2233;
+      --primary-soft: #fde9f3;
+      --accent: #ff9a1f;
+      --text: #17202a;
+      --text-light: #5f6b76;
+      --white: #ffffff;
+      --bg: #f5f7f9;
+      --card: #ffffff;
+      --border: #dfe5ea;
+      --footer: #151a2b;
+      --shadow: 0 16px 40px rgba(13, 39, 63, 0.08);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max-width: 1180px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul,
+    ol {
+      padding-left: 1.2rem;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+     .topbar-inner {
+      width: min(92%, var(--max-width)); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .aj-mark { --s: 54px; position: relative; width: var(--s); height: var(--s); flex-shrink: 0; display: block; }
+    .aj-mark .ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      background: linear-gradient(145deg, #ff9a1f 0%, #f0453a 38%, #e4007c 72%, #b5179e 100%);
+      -webkit-mask: radial-gradient(circle calc(var(--s) * 0.5) at 72% 50%, transparent 97%, #000 100%);
+              mask: radial-gradient(circle calc(var(--s) * 0.5) at 72% 50%, transparent 97%, #000 100%);
+    }
+    .aj-mark .inner {
+      position: absolute; width: 68%; height: 68%; left: 17%; top: 16%; border-radius: 50%; background: #3b4250;
+      -webkit-mask: radial-gradient(circle calc(var(--s) * 0.34) at 24% 50%, transparent 97%, #000 100%);
+              mask: radial-gradient(circle calc(var(--s) * 0.34) at 24% 50%, transparent 97%, #000 100%);
+    }
+    .aj-mark .mono {
+      position: absolute; inset: 0; display: grid; place-items: center; line-height: 1;
+      font-weight: 800; font-size: calc(var(--s) * 0.3); letter-spacing: -0.02em; color: #1d2233;
+      padding-right: calc(var(--s) * 0.06);
+    }
+    .aj-mark.on-dark .inner { background: #cfd6e2; }
+    .aj-mark.on-dark .mono { color: #ffffff; }
+    .site-name { font-size: 1.05rem; font-weight: 800; letter-spacing: 0.08em; color: var(--primary-dark); white-space: nowrap; }
+    .nav ul { display: flex; align-items: center; gap: 24px; }
+    .nav a { font-size: 0.95rem; font-weight: 700; color: #31414f; position: relative; transition: var(--transition); }
+    .nav a:hover, .nav a.active { color: var(--primary); }
+    .nav a.active::after, .nav a:hover::after {
+      content: ""; position: absolute; left: 0; bottom: -8px; width: 100%; height: 2px; background: var(--accent); border-radius: 20px;
+    }
+
+    .site-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      padding-left: 0;
+    }
+
+    .nav a {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #31414f;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+    }
+
+    .nav a.active::after,
+    .nav a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 20px;
+    }
+
+    .header-cta,
+    .btn-primary,
+    .btn-secondary,
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .header-cta,
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .header-cta:hover,
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      padding: 12px 20px;
+      border: 1px solid rgba(209, 0, 111, 0.14);
+      color: var(--primary);
+      background: transparent;
+    }
+
+    .btn-outline:hover {
+      background: rgba(209, 0, 111, 0.06);
+    }
+
+    .hamburger {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: none;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .page-hero {
+      position: relative;
+      padding: 88px 0 74px;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(228, 0, 124, 0.38), transparent 46%), linear-gradient(135deg, rgba(29, 34, 51, 0.96), rgba(59, 66, 80, 0.95)),
+        url("images/tax.webp") center/cover no-repeat;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .page-hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.06));
+    }
+
+    .page-hero-wrap {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .page-hero h1 {
+      font-size: clamp(2.2rem, 5vw, 4rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .page-hero p {
+      max-width: 60ch;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 24px;
+      padding: 26px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-card p {
+      margin-bottom: 18px;
+      font-size: 0.96rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-list {
+      list-style: none;
+      display: grid;
+      gap: 12px;
+      padding-left: 0;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .hero-list i {
+      color: #ffb347;
+    }
+
+    .section {
+      padding: 76px 0;
+    }
+
+    .section.compact {
+      padding-top: 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: #0f1c28;
+    }
+
+    .section-head p {
+      color: var(--text-light);
+      max-width: 65ch;
+    }
+
+    .intro-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18, 32, 46, 0.05);
+    }
+
+    .intro-card p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .intro-card p:last-child {
+      margin-bottom: 0;
+    }
+
+    .services-stack {
+      display: grid;
+      gap: 24px;
+    }
+
+    .service-row {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18, 32, 46, 0.05);
+      transition: var(--transition);
+    }
+
+    .service-row:hover {
+      transform: translateY(-4px);
+    }
+
+    .service-row.reverse {
+      grid-template-columns: 0.9fr 1.1fr;
+    }
+
+    .service-row.reverse .service-content {
+      order: 2;
+    }
+
+    .service-row.reverse .service-media {
+      order: 1;
+    }
+
+    .service-media img {
+      width: 100%;
+      height: 100%;
+      min-height: 300px;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .service-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .service-content h2 {
+      font-size: clamp(1.5rem, 2.4vw, 2.2rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: #12202d;
+    }
+
+    .service-content p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .service-content ol,
+    .service-content ul {
+      margin-bottom: 20px;
+      color: var(--text);
+    }
+
+    .service-content li {
+      margin-bottom: 10px;
+    }
+
+    .service-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .cta-section {
+      padding: 0 0 76px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #e8452c 0%, #e4007c 62%, #a3158f 100%);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      max-width: 60ch;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .footer { background: var(--footer); color: #d8e1ea; margin-top: 20px; padding: 64px 0 24px; }
+.footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 28px; }
+
+.footer-brand-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.footer-brand .aj-mark { --s: 64px; }
+
+.footer-brand-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.footer-brand p { font-size: 0.95rem; color: #b8c4cf; max-width: 35ch; }
+.footer h4 { color: #ffffff; font-size: 1rem; margin-bottom: 16px; }
+.footer ul li { margin-bottom: 10px; }
+.footer ul li a { color: #b8c4cf; font-size: 0.94rem; transition: var(--transition); }
+.footer ul li a:hover { color: #ffffff; padding-left: 4px; }
+.footer-bottom {
+  margin-top: 38px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+  color: #95a4b2;
+}
+
+    @media (max-width: 1100px) {
+      .page-hero-wrap,
+      .service-row,
+      .service-row.reverse,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-row.reverse .service-content,
+      .service-row.reverse .service-media {
+        order: unset;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hamburger {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .nav {
+        position: absolute;
+        top: 100%;
+        right: 4%;
+        width: min(300px, 92vw);
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        padding: 18px;
+        display: none;
+      }
+
+      .nav.show {
+        display: block;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .page-hero {
+        padding: 78px 0 56px;
+      }
+
+      .intro-card,
+      .service-row,
+      .hero-card {
+        padding: 22px;
+      }
+
+      .service-actions,
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary,
+      .btn-outline {
+        width: 100%;
+      }
+
+      .service-media img {
+        min-height: 240px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .logo {
+        width: 44px;
+        height: 44px;
+      }
+
+      .site-name {
+        font-size: 0.95rem;
+      }
+
+      .topbar-inner {
+        gap: 12px;
+      }
+
+      .cta-box {
+        padding: 26px;
+      }
+    }
+  
+    /* ===== AJ SOLUTION CONSULT: two-line name beside the logo ===== */
+    .site-name { display: flex; flex-direction: column; justify-content: center; line-height: 1; font-size: inherit; letter-spacing: normal; }
+    .site-name .sn-top { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.34em; color: var(--primary); text-transform: uppercase; }
+    .site-name .sn-big { font-size: 1.45rem; font-weight: 800; letter-spacing: 0.01em; color: #1d2233; margin-top: 5px; }
+    .footer-brand-name { display: flex; flex-direction: column; justify-content: center; line-height: 1; font-size: inherit; letter-spacing: normal; }
+    .footer-brand-name .sn-top { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.34em; color: #ffb347; text-transform: uppercase; }
+    .footer-brand-name .sn-big { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.01em; color: #ffffff; margin-top: 5px; }
+    @media (max-width: 520px) {
+      .site-name .sn-top { font-size: 0.62rem; letter-spacing: 0.28em; }
+      .site-name .sn-big { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="new.html" class="brand" aria-label="AJ Solution Consult Home">
+          <span class="aj-mark" aria-hidden="true"><span class="ring"></span><span class="inner"></span><span class="mono">AJ</span></span>
+        <span class="site-name"><span class="sn-top">Solution</span><span class="sn-big">CONSULT</span></span>
+      </a>
+
+      <button class="hamburger" id="menuToggle" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav" id="mainNav" aria-label="Primary navigation">
+        <ul>
+          
+          <li><a href="new.html" >Home</a></li>
+          <li><a href="new-ssnit.html">SSNIT</a></li>
+          <li><a href="new-gra.html" class="active">GRA</a></li>
+          <li><a href="new-rgd.html">RGD</a></li>
+          <li><a href="new-doc.html">DOC</a></li>
+          <li><a href="new-hr.html">HRS</a></li>
+          <li><a href="new-cons.html">CON</a></li>
+          <li><a href="new-contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="new-request.html" class="header-cta">Request Service</a>
+    </div>
+  </header>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="page-hero-wrap">
+        <div>
+          <div class="eyebrow">
+            <i class="fas fa-receipt"></i>
+            GRA Tax Support
+          </div>
+          <h1>Professional GRA support for businesses, employers, and individuals.</h1>
+          <p>
+            AJ Solution Consult helps clients manage GRA tax registration, TIN support, VAT filing,
+            PAYE administration, taxpayer portal follow-up, and tax clearance assistance
+            with better structure and less delay.
+          </p>
+
+          <div class="hero-actions">
+            <a href="new-request.html" class="btn-primary">
+              <i class="fas fa-paper-plane"></i>
+              Request Service
+            </a>
+            <a href="new-contact.html" class="btn-secondary">
+              <i class="fas fa-envelope"></i>
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        <aside class="hero-card">
+          <h3>GRA service coverage</h3>
+          <p>
+            We support taxpayers and employers that need practical help with registration,
+            returns, payroll tax support, compliance review, and tax clearance processing.
+          </p>
+          <ul class="hero-list">
+            <li><i class="fas fa-check-circle"></i> Tax registration and TIN support</li>
+            <li><i class="fas fa-check-circle"></i> VAT filing assistance</li>
+            <li><i class="fas fa-check-circle"></i> PAYE filing and payroll tax support</li>
+            <li><i class="fas fa-check-circle"></i> Taxpayer portal and compliance follow-up</li>
+            <li><i class="fas fa-check-circle"></i> Tax clearance certificate processing</li>
+          </ul>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">GRA Services</span>
+          <h2>Reliable support for key tax and filing processes.</h2>
+          <p>
+            GRA services now rely heavily on registration, portal-based filing, tax return
+            submission, payment initiation, and access to related services, so a clear support
+            structure helps clients act faster and avoid compliance delays.
+          </p>
+        </div>
+
+        <div class="intro-card">
+          <p>
+            AJ Solution Consult provides hands-on support for individuals, employers, and businesses
+            that need help with registration, tax filing, payroll tax administration,
+            taxpayer record review, and clearance-related follow-up.
+          </p>
+          <p>
+            Our goal is to help you reduce delays, improve filing accuracy, and stay better
+            prepared for tenders, official requests, and general tax compliance obligations.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact">
+      <div class="container">
+        <div class="services-stack">
+          <article class="service-row">
+            <div class="service-content">
+              <div class="service-meta">
+                <i class="fas fa-id-card"></i>
+                Tax Registration
+              </div>
+              <h2>Tax Registration & TIN Support</h2>
+              <p>
+                We assist individuals and businesses with tax registration, TIN-related support,
+                and taxpayer record setup so you are better positioned for filing, payments,
+                and other GRA processes.
+              </p>
+              <ol>
+                <li><strong>Taxpayer registration:</strong> Support for individual and business registration.</li>
+                <li><strong>TIN assistance:</strong> Help with identification and taxpayer record validation.</li>
+                <li><strong>Document review:</strong> Guidance on registration details and corrections.</li>
+                <li><strong>Compliance readiness:</strong> Support to prepare for filing and tax-related requests.</li>
+              </ol>
+              <div class="service-actions">
+                <a href="new-request.html" class="btn-primary">Request Service</a>
+                <a href="new-contact.html" class="btn-outline">Book Consultation</a>
+              </div>
+            </div>
+
+            <div class="service-media">
+              <img src="images/tax.webp" alt="Tax registration and TIN support" />
+            </div>
+          </article>
+
+          <article class="service-row reverse">
+            <div class="service-content">
+              <div class="service-meta">
+                <i class="fas fa-file-invoice-dollar"></i>
+                VAT Filing
+              </div>
+              <h2>VAT Filing & Compliance Support</h2>
+              <p>
+                We help businesses prepare and manage VAT-related submissions more accurately,
+                with support for filing, compliance checks, and correction follow-up where needed.
+              </p>
+              <ul>
+                <li>VAT return preparation and filing support</li>
+                <li>Compliance review and filing guidance</li>
+                <li>Error correction and response support</li>
+                <li>Record-check assistance for accurate submissions</li>
+              </ul>
+              <div class="service-actions">
+                <a href="new-request.html" class="btn-primary">Request Support</a>
+                <a href="new-contact.html" class="btn-outline">Speak to an Expert</a>
+              </div>
+            </div>
+
+            <div class="service-media">
+              <img src="images/vat.jpg" alt="VAT filing and compliance support" />
+            </div>
+          </article>
+
+          <article class="service-row">
+            <div class="service-content">
+              <div class="service-meta">
+                <i class="fas fa-users-gear"></i>
+                PAYE Support
+              </div>
+              <h2>PAYE Filing & Payroll Tax Support</h2>
+              <p>
+                We support employers with PAYE-related tasks, including payroll tax calculation,
+                filing preparation, submission support, and employee tax reconciliation.
+              </p>
+              <ul>
+                <li>Monthly PAYE computation support</li>
+                <li>PAYE filing and submission assistance</li>
+                <li>Employee tax reconciliation support</li>
+                <li>Employer payroll compliance guidance</li>
+              </ul>
+              <div class="service-actions">
+                <a href="new-request.html" class="btn-primary">Request PAYE Support</a>
+                <a href="new-contact.html" class="btn-outline">Get Assistance</a>
+              </div>
+            </div>
+
+            <div class="service-media">
+              <img src="images/paye.jpg" alt="PAYE filing and payroll tax support" />
+            </div>
+          </article>
+
+          <article class="service-row reverse">
+            <div class="service-content">
+              <div class="service-meta">
+                <i class="fas fa-certificate"></i>
+                Tax Clearance
+              </div>
+              <h2>Tax Clearance & Compliance Assistance</h2>
+              <p>
+                We help clients review their tax status and support tax clearance certificate
+                processing for tenders, contracts, official requests, and related compliance needs.
+              </p>
+              <ul>
+                <li>Tax clearance certificate processing support</li>
+                <li>Compliance review before application</li>
+                <li>Support around outstanding tax issues</li>
+                <li>Taxpayer portal follow-up and guidance</li>
+              </ul>
+              <div class="service-actions">
+                <a href="new-request.html" class="btn-primary">Request Assistance</a>
+                <a href="new-contact.html" class="btn-outline">Discuss Your Case</a>
+              </div>
+            </div>
+
+            <div class="service-media">
+              <img src="images/clearance.jpg" alt="Tax clearance and compliance assistance" />
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Need help with tax registration, VAT filing, PAYE, or clearance support?</h2>
+            <p>
+              Request support today and let AJ Solution Consult help you handle GRA compliance tasks
+              with better organisation, follow-through, and professional guidance.
+            </p>
+          </div>
+
+          <a
+            href="new-request.html"
+            class="btn-primary"
+            style="background: #ffffff; color: #1d2233; box-shadow: none;"
+          >
+            <i class="fas fa-paper-plane"></i>
+            Request a Service
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+ <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+  <div class="footer-brand-top">
+    <span class="aj-mark on-dark" aria-hidden="true"><span class="ring"></span><span class="inner"></span><span class="mono">AJ</span></span>
+    <span class="footer-brand-name"><span class="sn-top">Solution</span><span class="sn-big">CONSULT</span></span>
+  </div>
+
+  <p>
+    AJ Solution Consult delivers dependable support in statutory compliance,
+    payroll administration, HR assistance, and business documentation
+    for individuals and organisations that value timely and professional service.
+  </p>
+</div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="new.html">Home</a></li>
+            <li><a href="new-services.html">Services</a></li>
+            <li><a href="new-request.html">Request</a></li>
+            <li><a href="new-blog.html">Blog</a></li>
+            <li><a href="new-contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="new-ssnit.html">SSNIT Services</a></li>
+            <li><a href="new-gra.html">GRA Services</a></li>
+            <li><a href="new-rgd.html">Registrar General</a></li>
+            <li><a href="new-doc.html">Document Services</a></li>
+            <li><a href="new-hr.html">HR Support Services</a></li>
+            <li><a href="new-cons.html">Consultation Services</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@ajconsult.com">info@ajconsult.com</a></li>
+            <li><a href="tel:+233240000000">+233 24 000 0000</a></li>
+            <li><a href="https://wa.me/233240000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="new-contact.html">Enquiry Form</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> AJ Solution Consult. All rights reserved.</p>
+        <p>Trusted statutory, payroll, and HR support services.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    const year = document.getElementById("year");
+
+    menuToggle.addEventListener("click", function () {
+      mainNav.classList.toggle("show");
+    });
+
+    year.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

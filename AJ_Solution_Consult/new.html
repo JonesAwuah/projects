@@ -1,0 +1,1214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AJ Solution Consult | Compliance, Payroll & HR Support</title>
+  <meta
+    name="description"
+    content="AJ Solution Consult provides statutory compliance, payroll support, HR assistance, tax administration, and business documentation services for individuals and businesses in Ghana."
+  />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+  />
+
+  <style>
+    :root {
+      --primary: #d1006f;
+      --primary-dark: #1d2233;
+      --primary-soft: #fde9f3;
+      --accent: #ff9a1f;
+      --text: #17202a;
+      --text-light: #5f6b76;
+      --white: #ffffff;
+      --bg: #f5f7f9;
+      --card: #ffffff;
+      --border: #dfe5ea;
+      --footer: #151a2b;
+      --shadow: 0 16px 40px rgba(13, 39, 63, 0.08);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max-width: 1180px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+     .topbar-inner {
+      width: min(92%, var(--max-width)); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .aj-mark { --s: 54px; position: relative; width: var(--s); height: var(--s); flex-shrink: 0; display: block; }
+    .aj-mark .ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      background: linear-gradient(145deg, #ff9a1f 0%, #f0453a 38%, #e4007c 72%, #b5179e 100%);
+      -webkit-mask: radial-gradient(circle calc(var(--s) * 0.5) at 72% 50%, transparent 97%, #000 100%);
+              mask: radial-gradient(circle calc(var(--s) * 0.5) at 72% 50%, transparent 97%, #000 100%);
+    }
+    .aj-mark .inner {
+      position: absolute; width: 68%; height: 68%; left: 17%; top: 16%; border-radius: 50%; background: #3b4250;
+      -webkit-mask: radial-gradient(circle calc(var(--s) * 0.34) at 24% 50%, transparent 97%, #000 100%);
+              mask: radial-gradient(circle calc(var(--s) * 0.34) at 24% 50%, transparent 97%, #000 100%);
+    }
+    .aj-mark .mono {
+      position: absolute; inset: 0; display: grid; place-items: center; line-height: 1;
+      font-weight: 800; font-size: calc(var(--s) * 0.3); letter-spacing: -0.02em; color: #1d2233;
+      padding-right: calc(var(--s) * 0.06);
+    }
+    .aj-mark.on-dark .inner { background: #cfd6e2; }
+    .aj-mark.on-dark .mono { color: #ffffff; }
+    .site-name { font-size: 1.05rem; font-weight: 800; letter-spacing: 0.08em; color: var(--primary-dark); white-space: nowrap; }
+    .nav ul { display: flex; align-items: center; gap: 24px; }
+    .nav a { font-size: 0.95rem; font-weight: 700; color: #31414f; position: relative; transition: var(--transition); }
+    .nav a:hover, .nav a.active { color: var(--primary); }
+    .nav a.active::after, .nav a:hover::after {
+      content: ""; position: absolute; left: 0; bottom: -8px; width: 100%; height: 2px; background: var(--accent); border-radius: 20px;
+    }
+
+    .site-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .nav ul {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav a {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #31414f;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+    }
+
+    .nav a.active::after,
+    .nav a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 20px;
+    }
+
+    .header-cta,
+    .btn-primary,
+    .btn-secondary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 24px;
+      border-radius: 999px;
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .header-cta,
+    .btn-primary {
+      background: var(--primary);
+      color: var(--white);
+      box-shadow: var(--shadow);
+    }
+
+    .header-cta:hover,
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: var(--white);
+    }
+
+    .btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 12px 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(209, 0, 111, 0.14);
+      color: var(--primary);
+      font-weight: 700;
+      transition: var(--transition);
+    }
+
+    .btn-outline:hover {
+      background: rgba(209, 0, 111, 0.06);
+    }
+
+    .hamburger {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: none;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .hero {
+      position: relative;
+      padding: 96px 0 82px;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(228, 0, 124, 0.38), transparent 46%), linear-gradient(135deg, rgba(29, 34, 51, 0.96), rgba(59, 66, 80, 0.95)),
+        url("images/consult.png") center/cover no-repeat;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.28), rgba(0, 0, 0, 0.06));
+    }
+
+    .hero-wrap {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.4rem, 5vw, 4.5rem);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 60ch;
+      font-size: 1.05rem;
+      color: rgba(255, 255, 255, 0.92);
+      margin-bottom: 28px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .hero-card {
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 24px;
+      padding: 26px;
+      backdrop-filter: blur(12px);
+      box-shadow: var(--shadow);
+    }
+
+    .hero-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 12px;
+    }
+
+    .hero-card p {
+      margin-bottom: 18px;
+      font-size: 0.96rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .hero-list {
+      display: grid;
+      gap: 12px;
+    }
+
+    .hero-list li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.95rem;
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    .hero-list i {
+      color: #ffb347;
+    }
+
+    .section {
+      padding: 76px 0;
+    }
+
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 30px;
+    }
+
+    .section-tag {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .section-head h2 {
+      font-size: clamp(1.9rem, 3vw, 3rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: #0f1c28;
+    }
+
+    .section-head p {
+      color: var(--text-light);
+      max-width: 65ch;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .image-card img {
+      width: 100%;
+      height: 100%;
+      min-height: 380px;
+      object-fit: cover;
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow);
+    }
+
+    .about-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18, 32, 46, 0.05);
+    }
+
+    .about-card h3 {
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+      color: #12202d;
+    }
+
+    .about-card p {
+      color: var(--text-light);
+      margin-bottom: 18px;
+    }
+
+    .mini-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 20px;
+    }
+
+    .mini-box {
+      background: #fbfcfd;
+      border: 1px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 18px;
+    }
+
+    .mini-box h4 {
+      margin-bottom: 8px;
+      color: #132230;
+      font-size: 1rem;
+    }
+
+    .mini-box p {
+      color: var(--text-light);
+      font-size: 0.94rem;
+      margin: 0;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .service-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 28px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18, 32, 46, 0.05);
+      transition: var(--transition);
+    }
+
+    .service-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .service-icon {
+      width: 56px;
+      height: 56px;
+      display: grid;
+      place-items: center;
+      border-radius: 16px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 1.2rem;
+      margin-bottom: 18px;
+    }
+
+    .service-card h3 {
+      font-size: 1.08rem;
+      margin-bottom: 10px;
+      color: #132230;
+    }
+
+    .service-card p {
+      color: var(--text-light);
+      margin-bottom: 18px;
+      font-size: 0.96rem;
+    }
+
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .team-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      overflow: hidden;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18, 32, 46, 0.05);
+      transition: var(--transition);
+    }
+
+    .team-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .team-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+    }
+
+    .team-card-content {
+      padding: 24px;
+    }
+
+    .team-card-content h3 {
+      font-size: 1.08rem;
+      margin-bottom: 6px;
+      color: #132230;
+    }
+
+    .team-role {
+      display: inline-block;
+      margin-bottom: 12px;
+      color: var(--primary);
+      font-size: 0.85rem;
+      font-weight: 800;
+    }
+
+    .team-card-content p {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .founder-section {
+      padding-top: 0;
+    }
+
+    .founder-card {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+      align-items: center;
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 26px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18, 32, 46, 0.05);
+    }
+
+    .founder-card img {
+      width: 100%;
+      min-height: 360px;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+    }
+
+    .founder-meta {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 14px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--primary-soft);
+      color: var(--primary);
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+    }
+
+    .founder-content h3 {
+      font-size: clamp(1.6rem, 2.4vw, 2.4rem);
+      line-height: 1.15;
+      margin-bottom: 12px;
+      color: #12202d;
+    }
+
+    .founder-content p {
+      color: var(--text-light);
+      margin-bottom: 16px;
+    }
+
+    .founder-highlights {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .founder-highlights .mini-box {
+      background: #fbfcfd;
+    }
+
+    .why-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+    }
+
+    .why-card {
+      background: var(--card);
+      border-radius: var(--radius-md);
+      padding: 24px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      text-align: left;
+    }
+
+    .why-card i {
+      color: var(--primary);
+      font-size: 1.4rem;
+      margin-bottom: 14px;
+    }
+
+    .why-card h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #11202e;
+    }
+
+    .why-card p {
+      color: var(--text-light);
+      font-size: 0.94rem;
+    }
+
+    .cta-section {
+      padding: 0 0 76px;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #e8452c 0%, #e4007c 62%, #a3158f 100%);
+      color: var(--white);
+      border-radius: 28px;
+      padding: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
+      box-shadow: var(--shadow);
+    }
+
+    .cta-box h2 {
+      font-size: clamp(1.6rem, 2.5vw, 2.4rem);
+      margin-bottom: 10px;
+    }
+
+    .cta-box p {
+      max-width: 60ch;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .footer { background: var(--footer); color: #d8e1ea; margin-top: 20px; padding: 64px 0 24px; }
+.footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 28px; }
+
+.footer-brand-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.footer-brand .aj-mark { --s: 64px; }
+
+.footer-brand-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.footer-brand p { font-size: 0.95rem; color: #b8c4cf; max-width: 35ch; }
+.footer h4 { color: #ffffff; font-size: 1rem; margin-bottom: 16px; }
+.footer ul li { margin-bottom: 10px; }
+.footer ul li a { color: #b8c4cf; font-size: 0.94rem; transition: var(--transition); }
+.footer ul li a:hover { color: #ffffff; padding-left: 4px; }
+.footer-bottom {
+  margin-top: 38px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+  color: #95a4b2;
+}
+
+    @media (max-width: 1100px) {
+      .hero-wrap,
+      .about-grid,
+      .services-grid,
+      .team-grid,
+      .founder-card,
+      .why-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .founder-highlights {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 992px) {
+      .hamburger {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .nav {
+        position: absolute;
+        top: 100%;
+        right: 4%;
+        width: min(300px, 92vw);
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        padding: 18px;
+        display: none;
+      }
+
+      .nav.show {
+        display: block;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+
+      .cta-box {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 78px 0 56px;
+      }
+
+      .about-card,
+      .service-card,
+      .team-card-content,
+      .why-card,
+      .hero-card,
+      .founder-card {
+        padding: 22px;
+      }
+
+      .mini-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .team-card img,
+      .founder-card img {
+        height: 240px;
+        min-height: 240px;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .logo {
+        width: 44px;
+        height: 44px;
+      }
+
+      .site-name {
+        font-size: 0.95rem;
+      }
+
+      .topbar-inner {
+        gap: 12px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+      }
+
+      .btn-primary,
+      .btn-secondary,
+      .btn-outline {
+        width: 100%;
+      }
+
+      .cta-box {
+        padding: 26px;
+      }
+    }
+  
+    /* ===== AJ SOLUTION CONSULT: two-line name beside the logo ===== */
+    .site-name { display: flex; flex-direction: column; justify-content: center; line-height: 1; font-size: inherit; letter-spacing: normal; }
+    .site-name .sn-top { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.34em; color: var(--primary); text-transform: uppercase; }
+    .site-name .sn-big { font-size: 1.45rem; font-weight: 800; letter-spacing: 0.01em; color: #1d2233; margin-top: 5px; }
+    .footer-brand-name { display: flex; flex-direction: column; justify-content: center; line-height: 1; font-size: inherit; letter-spacing: normal; }
+    .footer-brand-name .sn-top { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.34em; color: #ffb347; text-transform: uppercase; }
+    .footer-brand-name .sn-big { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.01em; color: #ffffff; margin-top: 5px; }
+    @media (max-width: 520px) {
+      .site-name .sn-top { font-size: 0.62rem; letter-spacing: 0.28em; }
+      .site-name .sn-big { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="new.html" class="brand" aria-label="AJ Solution Consult Home">
+          <span class="aj-mark" aria-hidden="true"><span class="ring"></span><span class="inner"></span><span class="mono">AJ</span></span>
+        <span class="site-name"><span class="sn-top">Solution</span><span class="sn-big">CONSULT</span></span>
+      </a>
+
+      <button class="hamburger" id="menuToggle" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav" id="mainNav">
+        <ul>
+          <li><a href="new.html" class="active">Home</a></li>
+          <li><a href="new-services.html">Services</a></li>
+          <li><a href="new-request.html">Request</a></li>
+          <li><a href="new-blog.html">Blog</a></li>
+          <li><a href="new-contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="new-request.html" class="header-cta">Request Service</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-wrap">
+        <div class="hero-content">
+          <div class="eyebrow">
+            <i class="fas fa-shield-alt"></i>
+            Trusted Compliance Partner
+          </div>
+          <h1>Professional statutory, payroll, and HR support for growing businesses.</h1>
+          <p>
+            AJ Solution Consult helps individuals, startups, and organisations manage SSNIT,
+            GRA, Registrar General, document processing, payroll coordination, and
+            HR support services with professionalism, speed, and accuracy.
+          </p>
+
+          <div class="hero-actions">
+            <a href="new-services.html" class="btn-primary">
+              <i class="fas fa-briefcase"></i>
+              Explore Services
+            </a>
+            <a href="new-contact.html" class="btn-secondary">
+              <i class="fas fa-envelope"></i>
+              Contact Us
+            </a>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <h3>What we support</h3>
+          <p>
+            Reliable administrative and compliance support that helps clients stay
+            organised, responsive, and penalty-free.
+          </p>
+          <ul class="hero-list">
+            <li><i class="fas fa-check-circle"></i> SSNIT registration and returns</li>
+            <li><i class="fas fa-check-circle"></i> GRA and PAYE support</li>
+            <li><i class="fas fa-check-circle"></i> Registrar General filings</li>
+            <li><i class="fas fa-check-circle"></i> HR documentation and payroll support</li>
+            <li><i class="fas fa-check-circle"></i> Business consultation and guidance</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">About AJ Solution Consult</span>
+          <h2>Practical support for businesses that need dependable follow-through.</h2>
+          <p>
+            We work with clients who need reliable help with recurring compliance,
+            important filings, staff administration, and documentation processes
+            that require accuracy and timely action.
+          </p>
+        </div>
+
+        <div class="about-grid">
+          <div class="image-card">
+            <img src="images/teamwork.webp" alt="AJ Solution Consult team working together" />
+          </div>
+
+          <div class="about-card">
+            <h3>Who we are</h3>
+            <p>
+              AJ Solution Consult is a business support and compliance service provider focused on
+              helping clients meet statutory obligations and manage administrative tasks
+              with confidence.
+            </p>
+            <p>
+              Our work covers compliance support, payroll-related assistance, employee
+              administration, business documentation, and practical advisory services.
+            </p>
+
+            <div class="mini-grid">
+              <div class="mini-box">
+                <h4>Our Mission</h4>
+                <p>To provide dependable, timely, and professional support that simplifies compliance and administration.</p>
+              </div>
+              <div class="mini-box">
+                <h4>Our Vision</h4>
+                <p>To become a trusted support partner for businesses and individuals across Ghana.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Meet the Team</span>
+          <h2>The people committed to helping your business stay organised and compliant.</h2>
+          <p>
+            Behind every successful client engagement is a team that values professionalism,
+            responsiveness, and practical support. Our team works together to ensure that
+            each service is handled with care, accuracy, and consistency.
+          </p>
+        </div>
+
+        <div class="team-grid">
+          <article class="team-card">
+            <img src="images/team1.avif" alt="AJ Solution Consult compliance support team member" />
+            <div class="team-card-content">
+              <h3>Compliance Support Team</h3>
+              <span class="team-role">Statutory & Filing Assistance</span>
+              <p>
+                Focused on helping clients manage registrations, returns, and key compliance
+                processes with better preparation and dependable follow-up.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <img src="images/team2.avif" alt="AJ Solution Consult payroll and HR support team member" />
+            <div class="team-card-content">
+              <h3>Payroll & HR Support Team</h3>
+              <span class="team-role">Employee & Payroll Administration</span>
+              <p>
+                Providing practical support for staff records, payroll coordination,
+                onboarding documentation, and day-to-day administrative processes.
+              </p>
+            </div>
+          </article>
+
+          <article class="team-card">
+            <img src="images/team3.avif" alt="AJ Solution Consult business advisory team member" />
+            <div class="team-card-content">
+              <h3>Business Advisory Team</h3>
+              <span class="team-role">Consultation & Documentation Guidance</span>
+              <p>
+                Supporting clients with documentation planning, process guidance,
+                and practical business advice tailored to real operational needs.
+              </p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section founder-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">The Minds Behind the Magic</span>
+          <h2>Jones Makafui Awuah</h2>
+          <p>
+            AJ Solution Consult is driven by leadership that understands the importance of
+            dependable support, clear communication, and practical solutions for
+            individuals and businesses navigating compliance and administration.
+          </p>
+        </div>
+
+        <div class="founder-card">
+          <div class="founder-image">
+            <img src="images/ceo.jpg" alt="Jones Makafui Awuah" />
+          </div>
+
+          <div class="founder-content">
+            <div class="founder-meta">
+              <i class="fas fa-user-tie"></i>
+              Founder & Lead Consultant
+            </div>
+            <h3>Leading AJ Solution Consult with professionalism, structure, and a service-first mindset.</h3>
+            <p>
+              Jones Makafui Awuah is the driving force behind AJ Solution Consult, providing direction
+              for the company’s work in statutory compliance support, payroll assistance,
+              HR administration, business documentation, and client advisory services.
+            </p>
+            <p>
+              With a strong focus on practical service delivery, attention to detail,
+              and dependable client support, he helps shape a business culture built on
+              trust, responsiveness, and consistent follow-through.
+            </p>
+            <p>
+              His approach is centred on helping clients feel informed, prepared, and
+              confident when handling important filings, documentation, and administrative
+              responsibilities.
+            </p>
+
+            <div class="founder-highlights">
+              <div class="mini-box">
+                <h4>Leadership Focus</h4>
+                <p>Professional service, dependable execution, and strong client support.</p>
+              </div>
+              <div class="mini-box">
+                <h4>Core Strength</h4>
+                <p>Turning complex administrative tasks into clearer and more manageable processes.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Our Services</span>
+          <h2>Service areas designed around real business needs.</h2>
+          <p>
+            Each service is structured to help clients reduce delays, improve record keeping,
+            and stay compliant with statutory and administrative requirements.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-id-card"></i>
+            </div>
+            <h3>SSNIT Services</h3>
+            <p>Registration, monthly returns, contribution reconciliation, and support for compliance-related submissions.</p>
+            <a href="new-ssnit.html" class="btn-outline">Learn More</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-calculator"></i>
+            </div>
+            <h3>GRA Services</h3>
+            <p>PAYE administration, tax support, compliance assistance, and accurate filing guidance for employers.</p>
+            <a href="new-gra.html" class="btn-outline">Learn More</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-building"></i>
+            </div>
+            <h3>Registrar General</h3>
+            <p>Business registration, annual returns, updates, and company records support for regulatory compliance.</p>
+            <a href="new-rgd.html" class="btn-outline">Learn More</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-folder-open"></i>
+            </div>
+            <h3>Document Services</h3>
+            <p>Professional help with document processing, applications, organisation, and important records support.</p>
+            <a href="new-doc.html" class="btn-outline">Learn More</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-user-tie"></i>
+            </div>
+            <h3>HR Support</h3>
+            <p>Administrative support for employee records, onboarding documentation, payroll coordination, and HR compliance.</p>
+            <a href="new-hr.html" class="btn-outline">Learn More</a>
+          </article>
+
+          <article class="service-card">
+            <div class="service-icon">
+              <i class="fas fa-comments"></i>
+            </div>
+            <h3>Consultation</h3>
+            <p>Professional consultation for business processes, statutory obligations, and practical compliance planning.</p>
+            <a href="new-cons.html" class="btn-outline">Learn More</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top: 0;">
+      <div class="container">
+        <div class="section-head">
+          <span class="section-tag">Why Clients Choose Us</span>
+          <h2>A service approach built on clarity, consistency, and professionalism.</h2>
+          <p>
+            We focus on clear communication, timely support, and practical business assistance
+            that helps clients avoid unnecessary delays and confusion.
+          </p>
+        </div>
+
+        <div class="why-grid">
+          <div class="why-card">
+            <i class="fas fa-clock"></i>
+            <h3>Timely Support</h3>
+            <p>We help clients handle important processes on time and with proper follow-up.</p>
+          </div>
+
+          <div class="why-card">
+            <i class="fas fa-shield-halved"></i>
+            <h3>Professional Handling</h3>
+            <p>We approach each service with care, structure, and attention to detail.</p>
+          </div>
+
+          <div class="why-card">
+            <i class="fas fa-people-arrows-left-right"></i>
+            <h3>Client-Focused Service</h3>
+            <p>We provide support that is practical, responsive, and easy to understand.</p>
+          </div>
+
+          <div class="why-card">
+            <i class="fas fa-file-circle-check"></i>
+            <h3>Reliable Process Support</h3>
+            <p>Our goal is to help you stay organised, compliant, and better prepared.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-box">
+          <div>
+            <h2>Need help with compliance, payroll, or documentation?</h2>
+            <p>
+              Request support today and let AJ Solution Consult help you manage your business processes
+              with confidence and professional guidance.
+            </p>
+          </div>
+
+          <a href="new-request.html" class="btn-primary" style="background: #ffffff; color: #1d2233; box-shadow: none;">
+            <i class="fas fa-paper-plane"></i>
+            Request a Service
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+  <div class="footer-brand-top">
+    <span class="aj-mark on-dark" aria-hidden="true"><span class="ring"></span><span class="inner"></span><span class="mono">AJ</span></span>
+    <span class="footer-brand-name"><span class="sn-top">Solution</span><span class="sn-big">CONSULT</span></span>
+  </div>
+
+  <p>
+    AJ Solution Consult delivers dependable support in statutory compliance,
+    payroll administration, HR assistance, and business documentation
+    for individuals and organisations that value timely and professional service.
+  </p>
+</div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="new.html">Home</a></li>
+            <li><a href="new-services.html">Services</a></li>
+            <li><a href="new-request.html">Request</a></li>
+            <li><a href="new-blog.html">Blog</a></li>
+            <li><a href="new-contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="new-ssnit.html">SSNIT Services</a></li>
+            <li><a href="new-gra.html">GRA Services</a></li>
+            <li><a href="new-rgd.html">Registrar General</a></li>
+            <li><a href="new-doc.html">Document Services</a></li>
+            <li><a href="new-hr.html">HR Support Services</a></li>
+            <li><a href="new-cons.html">Consultation Services</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@ajconsult.com">info@ajconsult.com</a></li>
+            <li><a href="tel:+233240000000">+233 24 000 0000</a></li>
+            <li><a href="https://wa.me/233240000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="new-contact.html">Enquiry Form</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> AJ Solution Consult. All rights reserved.</p>
+        <p>Trusted statutory, payroll, and HR support services.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    const year = document.getElementById("year");
+
+    menuToggle.addEventListener("click", function () {
+      mainNav.classList.toggle("show");
+    });
+
+    year.textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

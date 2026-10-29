@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Request a Service | AJ Solution Consult</title>
+  <meta name="description" content="Submit a service request to AJ Solution Consult for statutory compliance, payroll support, HR assistance, documentation services, and business consultation in Ghana.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #d1006f;
+      --primary-dark: #1d2233;
+      --primary-soft: #fde9f3;
+      --accent: #ff9a1f;
+      --text: #17202a;
+      --text-light: #5f6b76;
+      --white: #ffffff;
+      --bg: #f5f7f9;
+      --card: #ffffff;
+      --border: #dfe5ea;
+      --footer: #151a2b;
+      --shadow: 0 16px 40px rgba(13, 39, 63, 0.08);
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --max-width: 1180px;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Manrope", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    .container {
+      width: min(92%, var(--max-width));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    }
+
+     .topbar-inner {
+      width: min(92%, var(--max-width)); margin: 0 auto;
+      display: flex; align-items: center; justify-content: space-between; gap: 18px; padding: 16px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .aj-mark { --s: 54px; position: relative; width: var(--s); height: var(--s); flex-shrink: 0; display: block; }
+    .aj-mark .ring {
+      position: absolute; inset: 0; border-radius: 50%;
+      background: linear-gradient(145deg, #ff9a1f 0%, #f0453a 38%, #e4007c 72%, #b5179e 100%);
+      -webkit-mask: radial-gradient(circle calc(var(--s) * 0.5) at 72% 50%, transparent 97%, #000 100%);
+              mask: radial-gradient(circle calc(var(--s) * 0.5) at 72% 50%, transparent 97%, #000 100%);
+    }
+    .aj-mark .inner {
+      position: absolute; width: 68%; height: 68%; left: 17%; top: 16%; border-radius: 50%; background: #3b4250;
+      -webkit-mask: radial-gradient(circle calc(var(--s) * 0.34) at 24% 50%, transparent 97%, #000 100%);
+              mask: radial-gradient(circle calc(var(--s) * 0.34) at 24% 50%, transparent 97%, #000 100%);
+    }
+    .aj-mark .mono {
+      position: absolute; inset: 0; display: grid; place-items: center; line-height: 1;
+      font-weight: 800; font-size: calc(var(--s) * 0.3); letter-spacing: -0.02em; color: #1d2233;
+      padding-right: calc(var(--s) * 0.06);
+    }
+    .aj-mark.on-dark .inner { background: #cfd6e2; }
+    .aj-mark.on-dark .mono { color: #ffffff; }
+    .site-name { font-size: 1.05rem; font-weight: 800; letter-spacing: 0.08em; color: var(--primary-dark); white-space: nowrap; }
+    .nav ul { display: flex; align-items: center; gap: 24px; }
+    .nav a { font-size: 0.95rem; font-weight: 700; color: #31414f; position: relative; transition: var(--transition); }
+    .nav a:hover, .nav a.active { color: var(--primary); }
+    .nav a.active::after, .nav a:hover::after {
+      content: ""; position: absolute; left: 0; bottom: -8px; width: 100%; height: 2px; background: var(--accent); border-radius: 20px;
+    }
+    .site-name {
+      font-size: 1.05rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      color: var(--primary-dark);
+      white-space: nowrap;
+    }
+
+    .nav ul {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+    }
+
+    .nav a {
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #31414f;
+      position: relative;
+      transition: var(--transition);
+    }
+
+    .nav a:hover,
+    .nav a.active {
+      color: var(--primary);
+    }
+
+    .nav a.active::after,
+    .nav a:hover::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 2px;
+      background: var(--accent);
+      border-radius: 20px;
+    }
+
+    .header-cta {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 12px 22px;
+      border-radius: 999px;
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 700;
+      font-size: 0.92rem;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .header-cta:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .hamburger {
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: none;
+      background: var(--primary-soft);
+      color: var(--primary-dark);
+      border-radius: 12px;
+      cursor: pointer;
+      font-size: 1.1rem;
+    }
+
+    .hero {
+      position: relative;
+      padding: 92px 0 68px;
+      background:
+        radial-gradient(circle at 88% 18%, rgba(228, 0, 124, 0.38), transparent 46%), linear-gradient(135deg, rgba(29, 34, 51, 0.96), rgba(59, 66, 80, 0.95)),
+        url("images/logo.jpg") center/cover no-repeat;
+      color: var(--white);
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, rgba(0, 0, 0, 0.24), rgba(0, 0, 0, 0.06));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 1;
+      max-width: 760px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 14px;
+      margin-bottom: 20px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      background: rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      font-weight: 800;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.3rem, 5vw, 4.3rem);
+      line-height: 1.08;
+      margin-bottom: 18px;
+      font-weight: 800;
+    }
+
+    .hero p {
+      max-width: 62ch;
+      font-size: 1.03rem;
+      color: rgba(255, 255, 255, 0.92);
+    }
+
+    .request-section {
+      padding: 72px 0;
+    }
+
+    .request-grid {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 30px;
+      align-items: start;
+    }
+
+    .panel {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 34px;
+      box-shadow: var(--shadow);
+      border: 1px solid rgba(18, 32, 46, 0.05);
+    }
+
+    .panel-label {
+      display: inline-block;
+      margin-bottom: 14px;
+      color: var(--primary);
+      font-size: 0.84rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .panel h2 {
+      font-size: 1.9rem;
+      line-height: 1.2;
+      margin-bottom: 12px;
+      color: #0f1c28;
+    }
+
+    .panel-intro {
+      color: var(--text-light);
+      margin-bottom: 26px;
+      max-width: 60ch;
+    }
+
+    .info-list {
+      display: grid;
+      gap: 16px;
+    }
+
+    .info-card {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+      padding: 18px;
+      border-radius: var(--radius-md);
+      background: #fbfcfd;
+      border: 1px solid var(--border);
+      transition: var(--transition);
+    }
+
+    .info-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(209, 0, 111, 0.2);
+    }
+
+    .info-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: var(--primary-soft);
+      color: var(--primary);
+      flex-shrink: 0;
+      font-size: 1rem;
+    }
+
+    .info-text h3 {
+      font-size: 1rem;
+      margin-bottom: 4px;
+      color: #132230;
+    }
+
+    .info-text p {
+      font-size: 0.95rem;
+      color: var(--text-light);
+    }
+
+    .highlight-box {
+      margin-top: 22px;
+      padding: 22px;
+      border-radius: var(--radius-md);
+      background: linear-gradient(135deg, #fdf1f6, #fbeaf2);
+      border: 1px solid rgba(209, 0, 111, 0.12);
+    }
+
+    .highlight-box h3 {
+      font-size: 1rem;
+      margin-bottom: 8px;
+      color: #11202e;
+    }
+
+    .highlight-box p,
+    .highlight-box li {
+      color: var(--text-light);
+      font-size: 0.95rem;
+    }
+
+    .highlight-box ul {
+      margin-top: 10px;
+      display: grid;
+      gap: 8px;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: #12202d;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      border: 1px solid #d7dee5;
+      border-radius: 14px;
+      padding: 14px 16px;
+      background: #fff;
+      color: var(--text);
+      outline: none;
+      transition: var(--transition);
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(209, 0, 111, 0.12);
+    }
+
+    .form-group textarea {
+      min-height: 170px;
+      resize: vertical;
+    }
+
+    .submit-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      border: none;
+      border-radius: 999px;
+      padding: 15px 20px;
+      background: var(--primary);
+      color: var(--white);
+      font-weight: 800;
+      cursor: pointer;
+      transition: var(--transition);
+      box-shadow: var(--shadow);
+    }
+
+    .submit-btn:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+    }
+
+    .form-note {
+      margin-top: 14px;
+      font-size: 0.88rem;
+      color: var(--text-light);
+    }
+
+    .footer { background: var(--footer); color: #d8e1ea; margin-top: 20px; padding: 64px 0 24px; }
+.footer-grid { display: grid; grid-template-columns: 1.2fr 1fr 1fr 1fr; gap: 28px; }
+
+.footer-brand-top {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 16px;
+}
+
+.footer-brand .aj-mark { --s: 64px; }
+
+.footer-brand-name {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  color: #ffffff;
+  white-space: nowrap;
+}
+
+.footer-brand p { font-size: 0.95rem; color: #b8c4cf; max-width: 35ch; }
+.footer h4 { color: #ffffff; font-size: 1rem; margin-bottom: 16px; }
+.footer ul li { margin-bottom: 10px; }
+.footer ul li a { color: #b8c4cf; font-size: 0.94rem; transition: var(--transition); }
+.footer ul li a:hover { color: #ffffff; padding-left: 4px; }
+.footer-bottom {
+  margin-top: 38px;
+  padding-top: 18px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 0.92rem;
+  color: #95a4b2;
+}
+
+    @media (max-width: 992px) {
+      .request-grid,
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hamburger {
+        display: inline-grid;
+        place-items: center;
+      }
+
+      .header-cta {
+        display: none;
+      }
+
+      .nav {
+        position: absolute;
+        top: 100%;
+        right: 4%;
+        width: min(300px, 92vw);
+        background: #ffffff;
+        border-radius: 18px;
+        box-shadow: var(--shadow);
+        border: 1px solid rgba(0, 0, 0, 0.06);
+        padding: 18px;
+        display: none;
+      }
+
+      .nav.show {
+        display: block;
+      }
+
+      .nav ul {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 14px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 78px 0 56px;
+      }
+
+      .panel {
+        padding: 24px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero p {
+        font-size: 0.98rem;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .logo {
+        width: 44px;
+        height: 44px;
+      }
+
+      .site-name {
+        font-size: 0.95rem;
+      }
+
+      .topbar-inner {
+        gap: 12px;
+      }
+
+      .panel h2 {
+        font-size: 1.55rem;
+      }
+
+      .submit-btn {
+        font-size: 0.95rem;
+      }
+    }
+  
+    /* ===== AJ SOLUTION CONSULT: two-line name beside the logo ===== */
+    .site-name { display: flex; flex-direction: column; justify-content: center; line-height: 1; font-size: inherit; letter-spacing: normal; }
+    .site-name .sn-top { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.34em; color: var(--primary); text-transform: uppercase; }
+    .site-name .sn-big { font-size: 1.45rem; font-weight: 800; letter-spacing: 0.01em; color: #1d2233; margin-top: 5px; }
+    .footer-brand-name { display: flex; flex-direction: column; justify-content: center; line-height: 1; font-size: inherit; letter-spacing: normal; }
+    .footer-brand-name .sn-top { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.34em; color: #ffb347; text-transform: uppercase; }
+    .footer-brand-name .sn-big { font-size: 1.5rem; font-weight: 800; letter-spacing: 0.01em; color: #ffffff; margin-top: 5px; }
+    @media (max-width: 520px) {
+      .site-name .sn-top { font-size: 0.62rem; letter-spacing: 0.28em; }
+      .site-name .sn-big { font-size: 1.2rem; }
+    }
+  </style>
+</head>
+<body>
+
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a href="new.html" class="brand" aria-label="AJ Solution Consult Home">
+          <span class="aj-mark" aria-hidden="true"><span class="ring"></span><span class="inner"></span><span class="mono">AJ</span></span>
+
+
+        <span class="site-name"><span class="sn-top">Solution</span><span class="sn-big">CONSULT</span></span>
+      </a>
+
+      <button class="hamburger" id="menuToggle" aria-label="Toggle navigation menu">
+        <i class="fas fa-bars"></i>
+      </button>
+
+      <nav class="nav" id="mainNav">
+        <ul>
+          <li><a href="new-blog.html">Home</a></li>
+          <li><a href="new-services.html">Services</a></li>
+          <li><a href="new-request.html" class="active">Request</a></li>
+          <li><a href="new-blog.html">Blog</a></li>
+          <li><a href="new-contact.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a href="new-contact.html" class="header-cta">Contact Us</a>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container">
+      <div class="hero-content">
+        <div class="eyebrow">
+          <i class="fas fa-paper-plane"></i>
+          Request a Service
+        </div>
+        <h1>Tell us what support you need and we’ll help you move forward.</h1>
+        <p>
+          Use this page to request assistance with SSNIT, GRA, Registrar General,
+          document processing, HR support, payroll coordination, or business consultation.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <main class="request-section">
+    <div class="container">
+      <div class="request-grid">
+
+        <section class="panel">
+          <span class="panel-label">Before you submit</span>
+          <h2>Make your request clear and easy to process.</h2>
+          <p class="panel-intro">
+            A complete request helps us understand your needs faster and respond with
+            the right support, next steps, and service direction.
+          </p>
+
+          <div class="info-list">
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-list-ul"></i>
+              </div>
+              <div class="info-text">
+                <h3>Choose the right service</h3>
+                <p>Select the service that best matches what you need support with.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-file-alt"></i>
+              </div>
+              <div class="info-text">
+                <h3>Provide useful details</h3>
+                <p>Describe the issue, requirement, or process you need help with.</p>
+              </div>
+            </div>
+
+            <div class="info-card">
+              <div class="info-icon">
+                <i class="fas fa-phone-volume"></i>
+              </div>
+              <div class="info-text">
+                <h3>Leave reachable contact details</h3>
+                <p>Include a valid phone number and email address for follow-up.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="highlight-box">
+            <h3>Service Areas</h3>
+            <ul>
+              <li>SSNIT services and monthly return support</li>
+              <li>GRA, PAYE, and tax-related assistance</li>
+              <li>Registrar General registration and filing support</li>
+              <li>Document processing and administrative services</li>
+              <li>HR support and payroll coordination</li>
+              <li>Business and compliance consultation</li>
+            </ul>
+          </div>
+
+          <div class="highlight-box">
+            <h3>Important Note</h3>
+            <p>
+              This form layout is ready for publishing, but you should replace the
+              placeholder form action with your preferred submission method such as
+              Formspree, Netlify Forms, or email handling before going live.
+            </p>
+          </div>
+        </section>
+
+        <section class="panel">
+          <span class="panel-label">Service request form</span>
+          <h2>Submit your request.</h2>
+          <p class="panel-intro">
+            Fill in your details below and tell us the exact support you need.
+            Clear information helps us respond more effectively.
+          </p>
+
+          <form action="#" method="post">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="fullName">Full Name</label>
+                <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="phoneNumber">Phone Number</label>
+                <input type="tel" id="phoneNumber" name="phoneNumber" placeholder="Enter your phone number" required>
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="emailAddress">Email Address</label>
+                <input type="email" id="emailAddress" name="emailAddress" placeholder="Enter your email address" required>
+              </div>
+
+              <div class="form-group">
+                <label for="companyName">Company / Organisation</label>
+                <input type="text" id="companyName" name="companyName" placeholder="Enter company or organisation name">
+              </div>
+            </div>
+
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="serviceType">Service Needed</label>
+                <select id="serviceType" name="serviceType" required>
+                  <option value="">Select a service</option>
+                  <option value="ssnit">SSNIT Services</option>
+                  <option value="gra">GRA / PAYE Support</option>
+                  <option value="rgd">Registrar General Support</option>
+                  <option value="documentation">Document Services</option>
+                  <option value="hr">HR Support Services</option>
+                  <option value="consultation">Consultation</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="preferredContact">Preferred Contact Method</label>
+                <select id="preferredContact" name="preferredContact">
+                  <option value="">Select preferred contact method</option>
+                  <option value="phone">Phone Call</option>
+                  <option value="email">Email</option>
+                  <option value="whatsapp">WhatsApp</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="subject">Subject</label>
+              <input type="text" id="subject" name="subject" placeholder="Enter the subject of your request">
+            </div>
+
+            <div class="form-group">
+              <label for="message">Request Details</label>
+              <textarea id="message" name="message" placeholder="Describe the support you need, your challenge, or the process you want help with" required></textarea>
+            </div>
+
+            <button type="submit" class="submit-btn">
+              <i class="fas fa-paper-plane"></i>
+              Submit Request
+            </button>
+
+            <p class="form-note">
+              Replace the placeholder form action before publishing the page live.
+            </p>
+          </form>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+  <div class="footer-brand-top">
+    <span class="aj-mark on-dark" aria-hidden="true"><span class="ring"></span><span class="inner"></span><span class="mono">AJ</span></span>
+    <span class="footer-brand-name"><span class="sn-top">Solution</span><span class="sn-big">CONSULT</span></span>
+  </div>
+
+  <p>
+    AJ Solution Consult delivers dependable support in statutory compliance,
+    payroll administration, HR assistance, and business documentation
+    for individuals and organisations that value timely and professional service.
+  </p>
+</div>
+
+        <div>
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="new.html">Home</a></li>
+            <li><a href="new-services.html">Services</a></li>
+            <li><a href="new-request.html">Request</a></li>
+            <li><a href="new-blog.html">Blog</a></li>
+            <li><a href="new-contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Our Services</h4>
+          <ul>
+            <li><a href="new-ssnit.html">SSNIT Services</a></li>
+            <li><a href="new-gra.html">GRA Services</a></li>
+            <li><a href="new-rgd.html">Registrar General</a></li>
+            <li><a href="new-doc.html">Document Services</a></li>
+            <li><a href="new-hr.html">HR Support Services</a></li>
+            <li><a href="new-cons.html">Consultation Services</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4>Contact</h4>
+          <ul>
+            <li><a href="mailto:info@ajconsult.com">info@ajconsult.com</a></li>
+            <li><a href="tel:+233240000000">+233 24 000 0000</a></li>
+            <li><a href="https://wa.me/233240000000" target="_blank" rel="noopener noreferrer">WhatsApp</a></li>
+            <li><a href="new-contact.html">Enquiry Form</a></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="year"></span> AJ Solution Consult. All rights reserved.</p>
+        <p>Trusted statutory, payroll, and HR support services.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const menuToggle = document.getElementById("menuToggle");
+    const mainNav = document.getElementById("mainNav");
+    const year = document.getElementById("year");
+
+    menuToggle.addEventListener("click", function () {
+      mainNav.classList.toggle("show");
+    });
+
+    year.textContent = new Date().getFullYear();
+  </script>
+
+</body>
+</html>
